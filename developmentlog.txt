@@ -1,0 +1,45 @@
+Oh Snap!
+=======
+* Emily Chiang <sweet4lorie@csu.fullerton.edu>
+* Brian Chung
+* Niyaz Mahmud
+
+
+2015-2-02
+========
+
+This Week's Objectives
+----------------------------
+
+* Download Unity, get accustom to user interface, build working scene. 3.5 hours
+ > Update Unity to latest version.
+ > Understand most of the tools Unity offers to handle transformations and the camera.
+ > Create basic scene that shows basic understanding of Unity.
+ > Everyone
+
+* Create Background Scroll for scene. 3 hours
+ > Background must shift, level is meant to be endless.
+ > Player/Character never passes the center of the scene.
+ > Look into methods for randomizing obstacles.
+ > Niyaz Mahmud
+
+* Create movement and jump scripts for scene. 3 hours
+ > WASD movement
+ > Jump controls must match up with sprite animation
+ > Build separate Jump control for CharacterController and RigidBody
+ > Brian Chung
+
+* Continue building character models/rigs for players. 8 hours
+ > Fix leg rig problems for C-Robot and import into unity new rig/animation
+ > Start and finish rig for H-Robot
+ > Review and prep JK-Robot for rigging
+ > Emily Chiang
+
+* Art Update
+ > Cut-scene Storyboard and Animatic
+ > Cut-scene Bomb Model (low and high poly)
+ > First pass Level Design
+ > First pass on C-Robot run and jump
+ > JK-Robot models (low and high poly)
+ > H-Monster model (low poly)
+ > Artists
