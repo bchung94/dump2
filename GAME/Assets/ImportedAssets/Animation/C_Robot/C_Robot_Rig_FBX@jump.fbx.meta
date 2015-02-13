@@ -1,101 +1,70 @@
 fileFormatVersion: 2
-guid: 27139e149faff42ca9fb631cd45d2e5f
+guid: 7b8e25b06212b45b49996827277d8e66
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
-    100000: C_Robot_Rig:bottom_geo
-    100002: C_Robot_Rig:C_Robot_Geo
-    100004: C_Robot_Rig:C_Robot_Joint
-    100006: C_Robot_Rig:chest_geo
-    100008: C_Robot_Rig:chest_joint
-    100010: C_Robot_Rig:head_geo
-    100012: C_Robot_Rig:head_joint
-    100014: C_Robot_Rig:L_ankle_joint
-    100016: C_Robot_Rig:L_clavicle_joint
-    100018: C_Robot_Rig:L_claw_1_joint
-    100020: C_Robot_Rig:L_claw_2_joint
-    100022: C_Robot_Rig:L_elbow_joint
-    100024: C_Robot_Rig:L_foot_shadow
-    100026: C_Robot_Rig:L_hand_geo
-    100028: C_Robot_Rig:L_hand_joint
-    100030: C_Robot_Rig:L_hip_joint
-    100032: C_Robot_Rig:L_knee_joint
-    100034: C_Robot_Rig:L_shoulder_geo
-    100036: C_Robot_Rig:L_shoulder_joint
-    100038: C_Robot_Rig:L_toe_shadow
-    100040: C_Robot_Rig:R_ankle_joint
-    100042: C_Robot_Rig:R_clavicle_joint
-    100044: C_Robot_Rig:R_claw_1_joint
-    100046: C_Robot_Rig:R_claw_2_joint
-    100048: C_Robot_Rig:R_elbow_joint
-    100050: C_Robot_Rig:R_foot_shadow
-    100052: C_Robot_Rig:R_hand_geo
-    100054: C_Robot_Rig:R_hand_joint
-    100056: C_Robot_Rig:R_hip_joint
-    100058: C_Robot_Rig:R_knee_joint
-    100060: C_Robot_Rig:R_shoulder_geo
-    100062: C_Robot_Rig:R_shoulder_joint
-    100064: C_Robot_Rig:R_toe_shadow
-    100066: C_Robot_Rig:ROOT_JOINT
-    100068: C_Robot_Rig:root_joint
-    100070: C_Robot_Rig:root_joint_group
-    100072: C_Robot_Rig:torso_joint
-    100074: C_Robot_Rig:waist_joint
-    100076: //RootNode
-    400000: C_Robot_Rig:bottom_geo
-    400002: C_Robot_Rig:C_Robot_Geo
-    400004: C_Robot_Rig:C_Robot_Joint
-    400006: C_Robot_Rig:chest_geo
-    400008: C_Robot_Rig:chest_joint
-    400010: C_Robot_Rig:head_geo
-    400012: C_Robot_Rig:head_joint
-    400014: C_Robot_Rig:L_ankle_joint
-    400016: C_Robot_Rig:L_clavicle_joint
-    400018: C_Robot_Rig:L_claw_1_joint
-    400020: C_Robot_Rig:L_claw_2_joint
-    400022: C_Robot_Rig:L_elbow_joint
-    400024: C_Robot_Rig:L_foot_shadow
-    400026: C_Robot_Rig:L_hand_geo
-    400028: C_Robot_Rig:L_hand_joint
-    400030: C_Robot_Rig:L_hip_joint
-    400032: C_Robot_Rig:L_knee_joint
-    400034: C_Robot_Rig:L_shoulder_geo
-    400036: C_Robot_Rig:L_shoulder_joint
-    400038: C_Robot_Rig:L_toe_shadow
-    400040: C_Robot_Rig:R_ankle_joint
-    400042: C_Robot_Rig:R_clavicle_joint
-    400044: C_Robot_Rig:R_claw_1_joint
-    400046: C_Robot_Rig:R_claw_2_joint
-    400048: C_Robot_Rig:R_elbow_joint
-    400050: C_Robot_Rig:R_foot_shadow
-    400052: C_Robot_Rig:R_hand_geo
-    400054: C_Robot_Rig:R_hand_joint
-    400056: C_Robot_Rig:R_hip_joint
-    400058: C_Robot_Rig:R_knee_joint
-    400060: C_Robot_Rig:R_shoulder_geo
-    400062: C_Robot_Rig:R_shoulder_joint
-    400064: C_Robot_Rig:R_toe_shadow
-    400066: C_Robot_Rig:ROOT_JOINT
-    400068: C_Robot_Rig:root_joint
-    400070: C_Robot_Rig:root_joint_group
-    400072: C_Robot_Rig:torso_joint
-    400074: C_Robot_Rig:waist_joint
-    400076: //RootNode
-    4300000: C_Robot_Rig:R_hand_geo
-    4300002: C_Robot_Rig:R_shoulder_geo
-    4300004: C_Robot_Rig:L_hand_geo
-    4300006: C_Robot_Rig:L_shoulder_geo
-    4300008: C_Robot_Rig:head_geo
-    4300010: C_Robot_Rig:chest_geo
-    4300012: C_Robot_Rig:bottom_geo
+    100000: C_Robot_Rig:chest_joint
+    100002: C_Robot_Rig:head_joint
+    100004: C_Robot_Rig:L_ankle_joint
+    100006: C_Robot_Rig:L_clavicle_joint
+    100008: C_Robot_Rig:L_claw_1_joint
+    100010: C_Robot_Rig:L_claw_2_joint
+    100012: C_Robot_Rig:L_elbow_joint
+    100014: C_Robot_Rig:L_foot_shadow
+    100016: C_Robot_Rig:L_hand_joint
+    100018: C_Robot_Rig:L_hip_joint
+    100020: C_Robot_Rig:L_knee_joint
+    100022: C_Robot_Rig:L_shoulder_joint
+    100024: C_Robot_Rig:L_toe_shadow
+    100026: C_Robot_Rig:R_ankle_joint
+    100028: C_Robot_Rig:R_clavicle_joint
+    100030: C_Robot_Rig:R_claw_1_joint
+    100032: C_Robot_Rig:R_claw_2_joint
+    100034: C_Robot_Rig:R_elbow_joint
+    100036: C_Robot_Rig:R_foot_shadow
+    100038: C_Robot_Rig:R_hand_joint
+    100040: C_Robot_Rig:R_hip_joint
+    100042: C_Robot_Rig:R_knee_joint
+    100044: C_Robot_Rig:R_shoulder_joint
+    100046: C_Robot_Rig:R_toe_shadow
+    100048: C_Robot_Rig:ROOT_JOINT
+    100050: C_Robot_Rig:root_joint
+    100052: C_Robot_Rig:root_joint_group
+    100054: C_Robot_Rig:torso_joint
+    100056: C_Robot_Rig:waist_joint
+    100058: //RootNode
+    400000: C_Robot_Rig:chest_joint
+    400002: C_Robot_Rig:head_joint
+    400004: C_Robot_Rig:L_ankle_joint
+    400006: C_Robot_Rig:L_clavicle_joint
+    400008: C_Robot_Rig:L_claw_1_joint
+    400010: C_Robot_Rig:L_claw_2_joint
+    400012: C_Robot_Rig:L_elbow_joint
+    400014: C_Robot_Rig:L_foot_shadow
+    400016: C_Robot_Rig:L_hand_joint
+    400018: C_Robot_Rig:L_hip_joint
+    400020: C_Robot_Rig:L_knee_joint
+    400022: C_Robot_Rig:L_shoulder_joint
+    400024: C_Robot_Rig:L_toe_shadow
+    400026: C_Robot_Rig:R_ankle_joint
+    400028: C_Robot_Rig:R_clavicle_joint
+    400030: C_Robot_Rig:R_claw_1_joint
+    400032: C_Robot_Rig:R_claw_2_joint
+    400034: C_Robot_Rig:R_elbow_joint
+    400036: C_Robot_Rig:R_foot_shadow
+    400038: C_Robot_Rig:R_hand_joint
+    400040: C_Robot_Rig:R_hip_joint
+    400042: C_Robot_Rig:R_knee_joint
+    400044: C_Robot_Rig:R_shoulder_joint
+    400046: C_Robot_Rig:R_toe_shadow
+    400048: C_Robot_Rig:ROOT_JOINT
+    400050: C_Robot_Rig:root_joint
+    400052: C_Robot_Rig:root_joint_group
+    400054: C_Robot_Rig:torso_joint
+    400056: C_Robot_Rig:waist_joint
+    400058: //RootNode
+    7400000: jump
     9500000: //RootNode
-    13700000: C_Robot_Rig:bottom_geo
-    13700002: C_Robot_Rig:chest_geo
-    13700004: C_Robot_Rig:head_geo
-    13700006: C_Robot_Rig:L_hand_geo
-    13700008: C_Robot_Rig:L_shoulder_geo
-    13700010: C_Robot_Rig:R_hand_geo
-    13700012: C_Robot_Rig:R_shoulder_geo
   materials:
     importMaterials: 1
     materialName: 0
@@ -105,17 +74,103 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 1
+      loopBlendPositionY: 1
+      loopBlendPositionXZ: 1
+      keepOriginalOrientation: 1
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 1
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:head_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:L_clavicle_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:L_clavicle_joint/C_Robot_Rig:L_shoulder_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:L_clavicle_joint/C_Robot_Rig:L_shoulder_joint/C_Robot_Rig:L_elbow_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:L_clavicle_joint/C_Robot_Rig:L_shoulder_joint/C_Robot_Rig:L_elbow_joint/C_Robot_Rig:L_hand_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:L_clavicle_joint/C_Robot_Rig:L_shoulder_joint/C_Robot_Rig:L_elbow_joint/C_Robot_Rig:L_hand_joint/C_Robot_Rig:L_claw_1_joint
+        weight: 0
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:L_clavicle_joint/C_Robot_Rig:L_shoulder_joint/C_Robot_Rig:L_elbow_joint/C_Robot_Rig:L_hand_joint/C_Robot_Rig:L_claw_2_joint
+        weight: 0
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:R_clavicle_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:R_clavicle_joint/C_Robot_Rig:R_shoulder_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:R_clavicle_joint/C_Robot_Rig:R_shoulder_joint/C_Robot_Rig:R_elbow_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:R_clavicle_joint/C_Robot_Rig:R_shoulder_joint/C_Robot_Rig:R_elbow_joint/C_Robot_Rig:R_hand_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:R_clavicle_joint/C_Robot_Rig:R_shoulder_joint/C_Robot_Rig:R_elbow_joint/C_Robot_Rig:R_hand_joint/C_Robot_Rig:R_claw_1_joint
+        weight: 0
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:torso_joint/C_Robot_Rig:chest_joint/C_Robot_Rig:R_clavicle_joint/C_Robot_Rig:R_shoulder_joint/C_Robot_Rig:R_elbow_joint/C_Robot_Rig:R_hand_joint/C_Robot_Rig:R_claw_2_joint
+        weight: 0
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:L_hip_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:L_hip_joint/C_Robot_Rig:L_knee_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:L_hip_joint/C_Robot_Rig:L_knee_joint/C_Robot_Rig:L_ankle_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:L_hip_joint/C_Robot_Rig:L_knee_joint/C_Robot_Rig:L_ankle_joint/C_Robot_Rig:L_foot_shadow
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:L_hip_joint/C_Robot_Rig:L_knee_joint/C_Robot_Rig:L_ankle_joint/C_Robot_Rig:L_foot_shadow/C_Robot_Rig:L_toe_shadow
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:R_hip_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:R_hip_joint/C_Robot_Rig:R_knee_joint
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:R_hip_joint/C_Robot_Rig:R_knee_joint/C_Robot_Rig:R_ankle_joint
+        weight: 0
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:R_hip_joint/C_Robot_Rig:R_knee_joint/C_Robot_Rig:R_foot_shadow
+        weight: 1
+      - path: C_Robot_Rig:root_joint_group/C_Robot_Rig:ROOT_JOINT/C_Robot_Rig:root_joint/C_Robot_Rig:waist_joint/C_Robot_Rig:R_hip_joint/C_Robot_Rig:R_knee_joint/C_Robot_Rig:R_foot_shadow/C_Robot_Rig:R_toe_shadow
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .100000001
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -134,7 +189,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 1
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     human:
     - boneName: C_Robot_Rig:root_joint
@@ -501,7 +556,8 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: C_Robot_Rig:ROOT_JOINT
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 27139e149faff42ca9fb631cd45d2e5f,
+    type: 3}
   animationType: 3
   additionalBone: 0
   userData: 

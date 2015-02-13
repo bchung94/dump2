@@ -67,7 +67,7 @@ This Week's Objectives
 * Connect Animation for C-Robot and H-Monster 6 h
  > Figure out how to handle H-Monster extra tail bones
  > Connect run and jump animation for C-Robot
- > Emily Ciang
+ > Emily Chiang
 
 * Organize Artist Shotgun. 3 h 
  > Set-up shotgun for artist and add assignments
