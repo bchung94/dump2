@@ -3,20 +3,25 @@ using System.Collections;
 
 public class P1move : MonoBehaviour {
 
+	private Animator animator;
+
 	private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(5, 0, 0);
 	private Vector3 up = new Vector3(0, 6, 0);
 	public bool isgrounded;
-	// Use this for initialization
+
+	// Use this for initialization	
 	void Start () {
-	
+		animator = GetComponent<Animator>();
+		animator.SetBool("Jump", false);
 	}
 
 	void OnCollisionEnter (Collision collision) {
-			if (collision.gameObject.tag == "Floor") {
-					isgrounded = true;
-				}
+		if (collision.gameObject.tag == "Floor") {
+			isgrounded = true;
+			animator.SetBool("Jump", false);
 		}
+	}
 
 	void OnCollisionExit (Collision collision) {
 		if (collision.gameObject.tag == "Floor") {
@@ -35,6 +40,7 @@ public class P1move : MonoBehaviour {
 		if ((Input.GetKey (KeyCode.Space))&&(isgrounded == true)) {
 			//rigidbody.AddForce (0, speed*2, 0);
 			rigidbody.velocity = up;
+			animator.SetBool("Jump", isgrounded);
 		}
 		rigidbody.transform.rotation = Quaternion.identity;
 		rigidbody.transform.Rotate (0, 270, 0);
