@@ -36,5 +36,7 @@ public class P1move : MonoBehaviour {
 			//rigidbody.AddForce (0, speed*2, 0);
 			rigidbody.velocity = up;
 		}
+		rigidbody.transform.rotation = Quaternion.identity;
+		rigidbody.transform.Rotate (0, 270, 0);
 	}
 }

@@ -36,6 +36,7 @@ public class P2move : MonoBehaviour {
 			//rigidbody.AddForce (0, speed*2, 0);
 			rigidbody.velocity = up;
 		}
+		rigidbody.transform.rotation = Quaternion.identity;
 	}
 
 }

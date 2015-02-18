@@ -4,7 +4,7 @@ using System.Collections;
 public class p2tether : MonoBehaviour {
 	
 	private GameObject player1;
-	private float Xpos, Ypos;
+	public float Xpos, Ypos, Zpos;
 	public float distX, distY;
 	public float speed, speed2;
 	public bool check;
@@ -19,11 +19,13 @@ public class p2tether : MonoBehaviour {
 	void FixedUpdate () {
 		//input timer for tether button
 		player1 = GameObject.Find ("Player1");
+		Zpos = player1.transform.position.x;
 		if ((Input.GetKey (KeyCode.E))&&(player1.transform.position.x > transform.position.x)) {
 			distX = (Mathf.Abs (player1.transform.position.x - transform.position.x)) * 1.5f;
 			distY = (Mathf.Abs (player1.transform.position.y - transform.position.y)) * 1.5f;
 			Xpos = transform.position.x;
 			Ypos = transform.position.y;
+
 			check = true;
 		}
 		if (check == true) {
@@ -43,6 +45,5 @@ public class p2tether : MonoBehaviour {
 				speed2 = 0;
 			}
 		}
-		transform.rotation = Quaternion.identity;
 	}
 }

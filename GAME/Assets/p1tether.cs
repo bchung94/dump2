@@ -43,6 +43,5 @@ public class p1tether : MonoBehaviour {
 				speed2 = 0;
 			}
 				}
-		transform.rotation = Quaternion.identity;
 	}
 }
