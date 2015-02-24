@@ -7,7 +7,8 @@ public class P1move : MonoBehaviour {
 
 	private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(5, 0, 0);
-	private Vector3 up = new Vector3(0, 6, 0);
+	private Vector3 up = new Vector3(0, 7, 0);
+	private Vector3 extragrav = new Vector3(0,-13,0);
 	public bool isgrounded;
 
 	// Use this for initialization	
@@ -29,6 +30,11 @@ public class P1move : MonoBehaviour {
 		}
 	}
 
+	IEnumerator Jump() {
+		yield return new WaitForSeconds (0.20f);
+		rigidbody.velocity = up;
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
 		if (Input.GetKey (KeyCode.A)) {
@@ -38,9 +44,11 @@ public class P1move : MonoBehaviour {
 			rigidbody.MovePosition(rigidbody.position + side * Time.deltaTime);
 		}
 		if ((Input.GetKey (KeyCode.Space))&&(isgrounded == true)) {
-			//rigidbody.AddForce (0, speed*2, 0);
-			rigidbody.velocity = up;
 			animator.SetBool("Jump", isgrounded);
+			StartCoroutine(Jump ());
+		}
+		if (isgrounded == false) {
+			rigidbody.AddForce(extragrav);
 		}
 		rigidbody.transform.rotation = Quaternion.identity;
 		rigidbody.transform.Rotate (0, 270, 0);
