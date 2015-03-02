@@ -4,6 +4,8 @@ using System.Collections;
 public class p1tether : MonoBehaviour {
 
 	private GameObject player1;
+	private GameObject background;
+	private backgroundscroll scroll;
 	private float Xpos, Ypos;
 	public float distX, distY;
 	public float speed, speed2;
@@ -27,17 +29,29 @@ public class p1tether : MonoBehaviour {
 					check = true;
 				}
 		if (check == true) {
-			if(Mathf.Abs(transform.position.x - Xpos) < distX) {
-				transform.position += new Vector3 (speed, 0, 0);
+			if (transform.position.x >= 0) {
+				player1.transform.position -= new Vector3 (speed,0,0);
+				background = GameObject.Find("Backdrop1");
+				scroll = background.GetComponent<backgroundscroll>();
+				scroll.speed = 1.5f;
 				speed += 0.01f;
+			}
+			else {
+				if(Mathf.Abs(transform.position.x - Xpos) < distX) {
+					transform.position += new Vector3 (speed, 0, 0);
+					speed += 0.01f;
+				}
 			}
 			if(Mathf.Abs(transform.position.y - Ypos) < distY) {
 				transform.position += new Vector3 (0,speed2, 0);
 				speed2 += 0.01f;
 			}
-			if (Mathf.Abs(transform.position.x - Xpos) >= distX) {
+			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)||(transform.position.x - player1.transform.position.x >= (distX/3))) {
 				speed = 0;
 				check = false;
+				background = GameObject.Find("Backdrop1");
+				scroll = background.GetComponent<backgroundscroll>();
+				scroll.speed = 0.5f;
 			}
 			if (Mathf.Abs(transform.position.y - Ypos) >= distY) {
 				speed2 = 0;
