@@ -30,6 +30,7 @@ public class p1tether : MonoBehaviour {
 				}
 		if (check == true) {
 			if (transform.position.x >= 0) {
+			//if ((player1.transform.position.x >= 0) && (Mathf.Abs(transform.position.x)>Mathf.Abs(player1.transform.position.x)) {
 				player1.transform.position -= new Vector3 (speed,0,0);
 				background = GameObject.Find("Backdrop1");
 				scroll = background.GetComponent<backgroundscroll>();
