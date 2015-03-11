@@ -17,11 +17,21 @@ public class P1move : MonoBehaviour {
 		animator.SetBool("Jump", false);
 	}
 
+	IEnumerator Speedbump() {
+		side = new Vector3 (11, 0, 0);
+		yield return new WaitForSeconds (4.0f);
+		side = new Vector3 (5, 0, 0);
+	}
+
 	void OnCollisionEnter (Collision collision) {
 		if (collision.gameObject.tag == "Floor") {
 			isgrounded = true;
 			animator.SetBool("Jump", false);
 		}
+	}
+
+	void OnTriggerEnter() {
+			StartCoroutine(Speedbump());
 	}
 
 	void OnCollisionExit (Collision collision) {
