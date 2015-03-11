@@ -48,7 +48,7 @@ public class P2move : MonoBehaviour {
 			StartCoroutine(Jump ());
 		}
 		if (isgrounded == false) {
-			//rigidbody.AddForce(extragrav);
+			rigidbody.AddForce(extragrav);
 		}
 		rigidbody.transform.rotation = Quaternion.identity;
 	}
