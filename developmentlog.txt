@@ -5,6 +5,106 @@ Oh Snap!
 * Niyaz Mahmud
 
 
+2015-3-10
+=========
+
+Previous Week's Objectives
+----------------------------
+
+* [Completed] Finish H-monster rig 10 h [10 h]
+ > Skin and import H-monster
+ > Do quick animation for testing import
+ > Test different bone placements for import of rig
+ > Finish building rig for high-poly version
+ > Emily
+
+* [Unfinished] Reimport and test Animations - [3 h]
+ > New animations for run and jump reimport and test
+ > Emily
+
+* [Completed] Building Sets for level Easy 4 h [4 h]
+ > import any fixed buildings
+ > build level sets for Level Easy
+ > Emily
+
+* [Completed] Refine & Fix Being-pulled Tether mechanic 7 h [8 h]
+ > Character A is being pulled by Character B
+ > Char A should not move past the center of the screen
+ > Background scroll should increase in speed appropriately
+ > Niyaz & Brian
+
+* [Completed] Start Scrolling Foreground components 6 h [6 h]
+ > Scroll foreground components
+ > Test speed based on run speed
+ > Start removing buildings not in scene
+ > Brian
+
+* Artist Update
+ > Color pass on buildings and characters
+ > Low poly Bomb for Start Screen
+ > Fix in-game building models [Completed]
+ > Fix animation speed for run and jump [Completed]
+ > Start on pull/idle animation [Completed]
+ > Cinematic - Model Background for Scene 1
+ > Cinematic - Model H-Monster (Retopo)
+ > Cinematic - Model Energy Bucket
+ > Cut Scenes - Win Ult/Win/Lose Storyboard [Completed]
+ > Cut Scenes - Model Monster Mother Ship
+ > Cut Scenes - Model Robot Mother Ship
+
+
+This Week's Objectives
+----------------------------
+
+* Fix high poly robot rig 5 h
+ > Test high poly robot arm
+ > Finish skinning
+ > Emily
+
+* Start High Poly Monster rig 5 h
+ > Finish setting up high poly monster rig
+ > Start testing skinning methods
+ > Emily
+
+* Reimport and test New/Old Animations 6 h
+ > Import and fix old animations
+ > Import and set up new animations
+ > Test masking tether animations
+ > Emily
+
+* Finish building prefab for all levels 5 h
+ > import any new textures
+ > build level sets for all levels
+ > Emily
+
+* Finish Scroll and Reload Foreground components 6 h
+ > Refine scroll speed and prefab use
+ > Take out model once out of scene
+ > Put randomized prefab after
+ > Brian
+
+* Start UI building 5 h
+ > Start screen, credit
+ > Character selection screen
+ > Niyaz and Brian
+
+* Start research networking component 4 h
+ > Research how to connect players via wifi
+ > Brian
+
+* Artist Update
+ > Texture Characters
+ > Texture Buildings
+ > Low poly Bomb and setup for Start Screen
+ > Cinematic - Model Background for Scene 1
+ > Cinematic - Model Background for Scene 2
+ > Cinematic - Model H-Monster (UV/Texture)
+ > Cinematic - Model Energy Bucket
+ > Cut Scenes - Model Monster Mother Ship
+ > Cut Scenes - Model Robot Mother Ship
+
+
+
 2015-2-23
 =========
 
@@ -67,10 +167,6 @@ This Week's Objectives
 * Building Sets for level Easy 4 h
  > import any fixed buildings
  > build level sets for Level Easy
- > Emily
-
-* Rig A-Monster 8 h
- > Rig and import A-Monster
  > Emily
 
 * Refine & Fix Being-pulled Tether mechanic 8 h
