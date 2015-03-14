@@ -92,6 +92,11 @@ This Week's Objectives
  > Research how to connect players via wifi
  > Brian
 
+* Start power up 4 h
+ > speed up power up
+ > research door hit
+ > Brian
+
 * Artist Update
  > Texture Characters
  > Texture Buildings
