@@ -18,6 +18,7 @@ public class P1move : MonoBehaviour {
 	}
 
 	IEnumerator Speedbump() {
+		side = new Vector3 (11, 0, 0);
 		yield return new WaitForSeconds (4.0f);
 		side = new Vector3 (5, 0, 0);
 	}
@@ -48,16 +49,11 @@ public class P1move : MonoBehaviour {
 	void FixedUpdate () {
 		if (Input.GetKey (KeyCode.A)) {
 			rigidbody.MovePosition(rigidbody.position + (-side) * Time.deltaTime);
-			//run animation
-			animator.SetBool("Run", true);
 		}
-		else if (Input.GetKey (KeyCode.D)) {
+		if (Input.GetKey (KeyCode.D)) {
 			rigidbody.MovePosition(rigidbody.position + side * Time.deltaTime);
-			//run animation
-			animator.SetBool("Run", true);
 		}
 		if ((Input.GetKey (KeyCode.Space))&&(isgrounded == true)) {
-			//jump animation
 			animator.SetBool("Jump", isgrounded);
 			StartCoroutine(Jump ());
 		}

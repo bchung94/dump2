@@ -7,6 +7,14 @@ public class backgroundscroll : MonoBehaviour {
 	void Start () {
 	}
 
+	void fastspeed() {
+		speed = 1.0f;
+	}
+
+	void normspeed() {
+		speed = 0.5f;
+	}
+
 	// Update is called once per frame
 	void Update () {
 		float offset = Time.time * speed;
