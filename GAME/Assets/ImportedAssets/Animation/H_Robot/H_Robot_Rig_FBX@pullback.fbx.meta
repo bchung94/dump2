@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 8a272303d613840cc877c0f6bc18787d
+guid: e8797f2a725834498ac1897dbd299ad1
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -63,7 +63,7 @@ ModelImporter:
     400054: H_Robot_Rig:waist_2_joint
     400056: H_Robot_Rig:waist_joint
     400058: //RootNode
-    7400000: jump
+    7400000: pullback
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -82,17 +82,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: jump
+      name: pullback
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 17
+      firstFrame: 1
+      lastFrame: 5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
