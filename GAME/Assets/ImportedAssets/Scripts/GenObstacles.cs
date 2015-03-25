@@ -25,7 +25,7 @@ public class GenObstacles : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//where each random set spawns at
-		spawnlocation = new Vector3 (35, 1, 0);
+		spawnlocation = new Vector3 (31, 1, 0);
 		timer = 1000;
 		timermax = 1000;
 		difficulty = 1;

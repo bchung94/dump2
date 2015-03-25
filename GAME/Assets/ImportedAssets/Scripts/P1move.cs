@@ -7,7 +7,7 @@ public class P1move : MonoBehaviour {
 
 	private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(5, 0, 0);
-	private Vector3 up = new Vector3(0, 7, 0);
+	private Vector3 up = new Vector3(0, 8, 0);
 	private Vector3 extragrav = new Vector3(0,-13,0);
 	public bool isgrounded;
 	private RaycastHit hit;
@@ -78,7 +78,7 @@ public class P1move : MonoBehaviour {
 
 	IEnumerator Jump() {
 		//Add jump delay and then jump up
-		yield return new WaitForSeconds (0.20f);
+		yield return new WaitForSeconds (0.15f);
 		rigidbody.velocity = up;
 	}
 
