@@ -58,7 +58,7 @@ public class GenObstacles : MonoBehaviour {
 					clone = Instantiate (Easy1, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1570;
+					timermax = 1560;
 				}
 				if (random == 2) {
 					clone = Instantiate (Easy2, spawnlocation, Quaternion.identity) as GameObject;
@@ -70,7 +70,7 @@ public class GenObstacles : MonoBehaviour {
 					clone = Instantiate (Easy3, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1190;
+					timermax = 1170;
 				}
 				if (random == 10) {
 					spawnlocation = new Vector3(58,0,0);

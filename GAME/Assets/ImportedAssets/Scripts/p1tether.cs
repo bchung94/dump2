@@ -10,11 +10,13 @@ public class p1tether : MonoBehaviour {
 	public float distX, distY;
 	public float speed, speed2;
 	public bool check;
+	public bool tethered;
 	// Use this for initialization
 	void Start () {
 		speed = 0;
 		speed2 = 0;
 		check = false;
+		tethered = false;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +29,7 @@ public class p1tether : MonoBehaviour {
 					Xpos = transform.position.x;
 					Ypos = transform.position.y;
 					check = true;
+					tethered = true;
 				}
 		if (check == true) {
 			if (transform.position.x >= 0) {
@@ -50,6 +53,7 @@ public class p1tether : MonoBehaviour {
 			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)||(transform.position.x - player1.transform.position.x >= (distX/3))) {
 				speed = 0;
 				check = false;
+				tethered = false;
 				background = GameObject.Find("Backdrop1");
 				scroll = background.GetComponent<backgroundscroll>();
 				scroll.speed = 0.5f;
