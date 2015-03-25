@@ -22,14 +22,16 @@ public class GenObstacles : MonoBehaviour {
 	private float timermax;
 	public int random;
 	public int difficulty;
+	public int speed;
 	// Use this for initialization
 	void Start () {
 		//where each random set spawns at
 		spawnlocation = new Vector3 (35, 1, 0);
 		timer = 1000;
 		timermax = 1000;
-		difficulty = 1;
+		difficulty = 3;
 		random = Random.Range (1, 4);
+		speed = 1;
 	}
 
 	IEnumerator addTag(Transform trans) {
@@ -53,26 +55,26 @@ public class GenObstacles : MonoBehaviour {
 		}
 		//Easy difficulty
 		if (difficulty == 1) {
-			if (timer == timermax) {
+			if (timer >= timermax) {
 				if (random == 1) {
 					clone = Instantiate (Easy1, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1560;
+					timermax = 1570;
 				}
-				if (random == 2) {
+				else if (random == 2) {
 					clone = Instantiate (Easy2, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
 					timermax = 780;
 				}
-				if (random == 3) {
+				else if (random == 3) {
 					clone = Instantiate (Easy3, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
 					timermax = 1170;
 				}
-				if (random == 10) {
+				else if (random == 10) {
 					spawnlocation = new Vector3(58,0,0);
 					clone = Instantiate (EasyStart, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
@@ -85,26 +87,26 @@ public class GenObstacles : MonoBehaviour {
 		}
 		//Medium difficulty
 		if (difficulty == 2) {
-			if (timer == timermax) {
+			if (timer >= timermax) {
 				if (random == 1) {
 					clone = Instantiate (Medium1, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1570;
+					timermax = 1050;
 				}
-				if (random == 2) {
+				else if (random == 2) {
 					clone = Instantiate (Medium2, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 780;
+					timermax = 1550;
 				}
-				if (random == 3) {
+				else if (random == 3) {
 					clone = Instantiate (Medium3, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1190;
+					timermax = 1050;
 				}
-				if (random == 10) {
+				else if (random == 10) {
 					spawnlocation = new Vector3(58,0,0);
 					clone = Instantiate (MediumStart, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
@@ -117,34 +119,36 @@ public class GenObstacles : MonoBehaviour {
 		}
 		//Hard difficulty
 		if (difficulty == 3) {
-			if (timer == timermax) {
+			if (timer >= timermax) {
 				if (random == 1) {
 					clone = Instantiate (Hard1, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1570;
+					timermax = 600;
 				}
-				if (random == 2) {
+				else if (random == 2) {
 					clone = Instantiate (Hard2, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 780;
+					timermax = 1100;
 				}
-				if (random == 3) {
+				else if (random == 3) {
 					clone = Instantiate (Hard3, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
-					timermax = 1190;
+					timermax = 1630;
 				}
-				if (random == 10) {
+				else if (random == 10) {
+					spawnlocation = new Vector3(58,0,0);
 					clone = Instantiate (HardStart, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
+					spawnlocation = new Vector3(35,0,0);
 					random = Random.Range (1, 4);
-					timermax = 1190;
+					timermax = 250;
 				}
 				timer = 0;
 			}
 		}
-		timer++;
+		timer += speed;
 	}
 }
