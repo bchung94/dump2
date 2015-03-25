@@ -21,12 +21,18 @@ public class P1move : MonoBehaviour {
 	//Speed boost
 	IEnumerator Speedbump() {
 		GameObject background;
+		GameObject generator;
 		//Boost foreground speed for all generated obstacles
 		foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
 			if (check.GetComponent<DestroySetEasy>() != null) {
 				check.GetComponent<DestroySetEasy>().speed = -0.3f;
 			}
 		}
+
+		//boost gen object speed while using powerup
+		generator = GameObject.Find ("Floor");
+		generator.GetComponent<GenObstacles> ().speed = 3;
+		
 		//Boost background speed
 		background = GameObject.Find ("Backdrop1");
 		background.GetComponent<backgroundscroll> ().speed = 1.1f;
@@ -37,6 +43,8 @@ public class P1move : MonoBehaviour {
 				check.GetComponent<DestroySetEasy>().speed = -0.1f;
 			}
 		}
+		//undo boost to gen object speed
+		generator.GetComponent<GenObstacles> ().speed = 1;
 		//Undo boosted speed for background
 		background.GetComponent<backgroundscroll> ().speed = 0.5f;
 	}

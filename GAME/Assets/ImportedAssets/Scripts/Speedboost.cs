@@ -24,7 +24,7 @@ public class Speedboost : MonoBehaviour {
 		if (Physics.Raycast(transform.position,downray,out hit,10)) {
 			collide = hit.collider.gameObject.name;
 			Debug.DrawRay(transform.position,downray,Color.green);
-			if (collide != "Player2" && collide != "Player1") {
+			if (collide != "Player2" && collide != "Player1" && collide != "Floor") {
 				height = hit.collider.gameObject.transform.position.y + 1.0f;
 				if (checker == false) {
 					transform.position += new Vector3(0,height,0);
