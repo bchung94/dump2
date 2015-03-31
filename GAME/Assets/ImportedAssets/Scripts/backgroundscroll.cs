@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class backgroundscroll : MonoBehaviour {
-	public float speed = 0.5f;
+public class BackgroundScroll : MonoBehaviour {
+
+	public float speed;
+
+	public float fastSpeed = 0.1f;
+	public float normalSpeed = 0.05f;
+
 	// Use this for initialization
 	void Start () {
-	}
-
-	void fastspeed() {
-		speed = 1.0f;
-	}
-
-	void normspeed() {
-		speed = 0.5f;
+		speed = normalSpeed;
 	}
 
 	// Update is called once per frame

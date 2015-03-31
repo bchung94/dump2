@@ -3,15 +3,22 @@ using System.Collections;
 
 public class P1move : MonoBehaviour {
 
+	// initialize values
 	private Animator animator;
-
-	private Vector3 forward = new Vector3(0, 0, 5);
-	private Vector3 side = new Vector3(5, 0, 0);
-	private Vector3 up = new Vector3(0, 8, 0);
-	private Vector3 extragrav = new Vector3(0,-13,0);
 	public bool isgrounded;
 	private RaycastHit hit;
 	public string collide;
+
+	// set values
+	//private Vector3 forward = new Vector3(0, 0, 5);
+	private Vector3 side = new Vector3(5, 0, 0);	// movement speed
+	private Vector3 up = new Vector3(0, 8, 0);	// jump height
+	private Vector3 extragrav = new Vector3(0, -13, 0);
+
+	private float speedBumpDuration = 0.5f;
+	private float blockDuration = 4.0f;
+	private float jumpDelay = 0.05f;
+
 	// Use this for initialization	
 	void Start () {
 		animator = GetComponent<Animator>();
@@ -20,33 +27,46 @@ public class P1move : MonoBehaviour {
 
 	//Speed boost
 	IEnumerator Speedbump() {
+
+		// initiate values
 		GameObject background;
 		GameObject generator;
-		//Boost foreground speed for all generated obstacles
+
+		background = GameObject.Find ("Backdrop1");
+		generator = GameObject.Find ("Floor");
+
+		BackgroundScroll bgScroll = background.GetComponent<BackgroundScroll> ();
+		GenerateLevelSets genLevel = generator.GetComponent<GenerateLevelSets> ();
+
+		// Boost foreground speed for all generated obstacles
 		foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
-			if (check.GetComponent<DestroySetEasy>() != null) {
-				check.GetComponent<DestroySetEasy>().speed = -0.3f;
+			DestroySet destroySet = check.GetComponent<DestroySet>();
+			if (destroySet != null) {
+				destroySet.speed = destroySet.fastSpeed;
 			}
 		}
 
-		//boost gen object speed while using powerup
-		generator = GameObject.Find ("Floor");
-		generator.GetComponent<GenObstacles> ().speed = 3;
+		// Boost gen object speed while using powerup
+		genLevel.speed = genLevel.fastSpeed;
 		
-		//Boost background speed
-		background = GameObject.Find ("Backdrop1");
-		background.GetComponent<backgroundscroll> ().speed = 1.1f;
-		yield return new WaitForSeconds (4.0f);
-		//Undo boosted speed for foreground
+		// Boost background speed
+		bgScroll.speed = bgScroll.fastSpeed;
+
+		// Duration of boost
+		yield return new WaitForSeconds (speedBumpDuration);
+
+		// Boost foreground speed for all generated obstacles
 		foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
-			if (check.GetComponent<DestroySetEasy>() != null) {
-				check.GetComponent<DestroySetEasy>().speed = -0.1f;
+			DestroySet destroySet = check.GetComponent<DestroySet>();
+			if (destroySet != null) {
+				destroySet.speed = destroySet.normalSpeed;
 			}
 		}
-		//undo boost to gen object speed
-		generator.GetComponent<GenObstacles> ().speed = 1;
-		//Undo boosted speed for background
-		background.GetComponent<backgroundscroll> ().speed = 0.5f;
+		// Undo boost to gen object speed
+		genLevel.speed = genLevel.normalSpeed;
+
+		// Undo boosted speed for background
+		bgScroll.speed = bgScroll.normalSpeed;
 	}
 
 	//block powerup function
@@ -55,11 +75,14 @@ public class P1move : MonoBehaviour {
 		cube = GameObject.Find("Cube");
 		player1 = GameObject.Find ("Player1");
 		player2 = GameObject.Find ("Player2");
+
 		//if either player is being tethered then let pass
-		if ((player1.GetComponent<p1tether>().tethered == true) || (player2.GetComponent<p2tether>().tethered == true)) {
+		if ((player1.GetComponent<P1tether>().tethered == true) || (player2.GetComponent<P2tether>().tethered == true)) {
 			cube.layer = 9;
 		}
-		yield return new WaitForSeconds (4.0f);
+
+		// wait duration
+		yield return new WaitForSeconds (blockDuration);
 		cube.layer = 8;
 	}
 
@@ -86,7 +109,7 @@ public class P1move : MonoBehaviour {
 
 	IEnumerator Jump() {
 		//Add jump delay and then jump up
-		yield return new WaitForSeconds (0.15f);
+		yield return new WaitForSeconds (jumpDelay);
 		rigidbody.velocity = up;
 	}
 
@@ -101,10 +124,11 @@ public class P1move : MonoBehaviour {
 		if (Input.GetKey (KeyCode.D)) {
 			rigidbody.MovePosition(rigidbody.position + side * Time.deltaTime);
 		}
+
 		//cast ray to check if REALLY grounded
-		if (Physics.Raycast(transform.position,downray,out hit,1)) {
+		if (Physics.Raycast(transform.position, downray, out hit, 1)) {
 			collide = hit.collider.gameObject.name;
-			Debug.DrawRay(transform.position,downray,Color.green);
+			Debug.DrawRay(transform.position, downray, Color.green);
 			//make exceptions if grounded against powerups or other players
 			if (collide == "Player2" || collide == "Sphere") {
 				isgrounded = false;
@@ -112,6 +136,7 @@ public class P1move : MonoBehaviour {
 			else {isgrounded = true;}
 		}
 		else { isgrounded = false;}
+
 		//jump function
 		if ((Input.GetKey (KeyCode.Space))&&(isgrounded == true)) {
 			animator.SetBool("Jump", isgrounded);
@@ -120,6 +145,7 @@ public class P1move : MonoBehaviour {
 		if (isgrounded == false) {
 			rigidbody.AddForce(extragrav);
 		}
+
 		//make sure model is facing correct direction
 		rigidbody.transform.rotation = Quaternion.identity;
 		rigidbody.transform.Rotate (0, 270, 0);

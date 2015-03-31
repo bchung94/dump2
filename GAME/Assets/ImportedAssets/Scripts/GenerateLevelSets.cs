@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GenObstacles : MonoBehaviour {
+public class GenerateLevelSets : MonoBehaviour {
 
 	public GameObject EasyStart;
 	public GameObject Easy1;
@@ -23,15 +23,19 @@ public class GenObstacles : MonoBehaviour {
 	public int random;
 	public int difficulty;
 	public int speed;
+
+	public int normalSpeed = 1;
+	public int fastSpeed = 3;
+
 	// Use this for initialization
 	void Start () {
 		//where each random set spawns at
 		spawnlocation = new Vector3 (31, 1, 0);
 		timer = 1000;
 		timermax = 1000;
-		difficulty = 3;
+		difficulty = 1;
 		random = Random.Range (1, 4);
-		speed = 1;
+		speed = normalSpeed;
 	}
 
 	IEnumerator addTag(Transform trans) {

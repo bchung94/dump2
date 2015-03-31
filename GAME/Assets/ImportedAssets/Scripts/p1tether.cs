@@ -1,16 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class p1tether : MonoBehaviour {
+public class P1tether : MonoBehaviour {
 
 	private GameObject player2;
 	private GameObject background;
-	private backgroundscroll scroll;
+	private BackgroundScroll scroll;
 	private float Xpos, Ypos;
 	public float distX, distY;
 	public float speed, speed2;
 	public bool checktether;
 	public bool tethered;
+
 	// Use this for initialization
 	void Start () {
 		speed = 0;
@@ -31,44 +32,49 @@ public class p1tether : MonoBehaviour {
 					checktether = true;
 					tethered = true;
 				}
+
 		if (checktether == true) {
+
+			background = GameObject.Find("Backdrop1");
+			BackgroundScroll bgScroll = background.GetComponent<BackgroundScroll>();
+
+			float speedIncrease = 0.01f;
+
 			if ((Xpos + distX) >= 4) {
 				if(Mathf.Abs(transform.position.x - Xpos) < (distX/2)) {
 					transform.position += new Vector3 (speed, 0, 0);
-					player2.transform.position -= new Vector3 (speed,0,0);
-					speed += 0.01f;
+					player2.transform.position -= new Vector3 (speed, 0, 0);
+					speed += speedIncrease;
 					//Boost foreground speed for all generated obstacles
 					foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
-						if (check.GetComponent<DestroySetEasy>() != null) {
-							check.GetComponent<DestroySetEasy>().speed = -0.3f;
+						DestroySet destroySet = check.GetComponent<DestroySet> ();
+						if (destroySet != null) {
+							destroySet.speed = destroySet.fastSpeed;
 						}
 					}
-					background = GameObject.Find("Backdrop1");
-					scroll = background.GetComponent<backgroundscroll>();
-					scroll.speed = 1.5f;
+					bgScroll.speed = bgScroll.fastSpeed;
 				}
 			}
 			else {
 				if(Mathf.Abs(transform.position.x - Xpos) < distX) {
 					transform.position += new Vector3 (speed, 0, 0);
-					speed += 0.01f;
+					speed += speedIncrease;
 				}
 			}
 			if(Mathf.Abs(transform.position.y - Ypos) < distY) {
-				transform.position += new Vector3 (0,speed2, 0);
-				speed2 += 0.01f;
+				transform.position += new Vector3 (0, speed2, 0);
+				speed2 += speedIncrease;
 			}
 			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)||(transform.position.x - player2.transform.position.x >= (distX/3))) {
 				speed = 0;
 				checktether = false;
 				tethered = false;
-				background = GameObject.Find("Backdrop1");
-				scroll = background.GetComponent<backgroundscroll>();
-				scroll.speed = 0.5f;
+				bgScroll.speed = bgScroll.normalSpeed;
 				//undo boost to foreground speed for all generated obstacles
 				foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
-					if (check.GetComponent<DestroySetEasy>() != null) {
-						check.GetComponent<DestroySetEasy>().speed = -0.1f;
+					DestroySet destroySet = check.GetComponent<DestroySet> ();
+					if (destroySet != null) {
+						destroySet.speed = destroySet.normalSpeed;
 					}
 				}
 			}

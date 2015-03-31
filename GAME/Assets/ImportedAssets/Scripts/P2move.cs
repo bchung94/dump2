@@ -5,11 +5,14 @@ public class P2move : MonoBehaviour {
 
 	private Animator animator;
 
-	private Vector3 forward = new Vector3(0, 0, 5);
+	//private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(5, 0, 0);
 	private Vector3 up = new Vector3(0, 8, 0);
 	private Vector3 extragrav = new Vector3(0,-10,0);
 	public bool isgrounded;
+
+	// set values
+	private float jumpDelay = 0.05f;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +34,7 @@ public class P2move : MonoBehaviour {
 	}
 
 	IEnumerator Jump() {
-		yield return new WaitForSeconds (0.15f);
+		yield return new WaitForSeconds (jumpDelay);
 		rigidbody.velocity = up;
 	}
 

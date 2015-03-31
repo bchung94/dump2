@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class p2tether : MonoBehaviour {
+public class P2tether : MonoBehaviour {
 	
 	private GameObject player1;
 	public float Xpos, Ypos;
@@ -9,6 +9,7 @@ public class p2tether : MonoBehaviour {
 	public float speed, speed2;
 	public bool check;
 	public bool tethered;
+
 	// Use this for initialization
 	void Start () {
 		speed = 0;

@@ -8,6 +8,7 @@ public class Speedboost : MonoBehaviour {
 	public string collide;
 	public float height;
 	private bool checker;
+
 	// Use this for initialization
 	void Start () {
 		speed = -0.1f;
