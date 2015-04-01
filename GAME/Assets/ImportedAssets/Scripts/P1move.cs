@@ -3,15 +3,18 @@ using System.Collections;
 
 public class P1move : MonoBehaviour {
 
+	// for animation
+	private Animator animatorControl;	// get animator from specified game object
+	private int player = 1;
+
 	// initialize values
-	private Animator animator;
 	public bool isgrounded;
 	private RaycastHit hit;
 	public string collide;
 
 	// set values
 	//private Vector3 forward = new Vector3(0, 0, 5);
-	private Vector3 side = new Vector3(5, 0, 0);	// movement speed
+	private Vector3 side = new Vector3(6, 0, 0);	// movement speed
 	private Vector3 up = new Vector3(0, 8, 0);	// jump height
 	private Vector3 extragrav = new Vector3(0, -13, 0);
 
@@ -21,9 +24,11 @@ public class P1move : MonoBehaviour {
 
 	// Use this for initialization	
 	void Start () {
-		animator = GetComponent<Animator>();
-		animator.SetBool("Jump", false);
-	}
+		// SET jump animtion
+		SetPlayers setPlayer = gameObject.GetComponent<SetPlayers> ();
+		animatorControl = setPlayer.getAnimator(player);
+		animatorControl.SetBool("Jump", false);
+	}	
 
 	//Speed boost
 	IEnumerator Speedbump() {
@@ -77,7 +82,7 @@ public class P1move : MonoBehaviour {
 		player2 = GameObject.Find ("Player2");
 
 		//if either player is being tethered then let pass
-		if ((player1.GetComponent<P1tether>().tethered == true) || (player2.GetComponent<P2tether>().tethered == true)) {
+		if ((player1.GetComponent<P1tether>().checktether == true) || (player2.GetComponent<P2tether>().tethered == true)) {
 			cube.layer = 9;
 		}
 
@@ -87,10 +92,11 @@ public class P1move : MonoBehaviour {
 	}
 
 	void OnCollisionEnter (Collision collision) {
+		// END jump animation
 		if (collision.gameObject.tag == "Floor") {
-			animator.SetBool("Jump", false);
+			animatorControl.SetBool("Jump", false);
 		}
-		//check for collision with block powerup
+		// check for collision with block powerup
 		if (collision.gameObject.name == "Cube") {
 			StartCoroutine(Block ());
 		}
@@ -137,9 +143,10 @@ public class P1move : MonoBehaviour {
 		}
 		else { isgrounded = false;}
 
-		//jump function
+		// jump function
 		if ((Input.GetKey (KeyCode.Space))&&(isgrounded == true)) {
-			animator.SetBool("Jump", isgrounded);
+			// START jump animation
+			animatorControl.SetBool("Jump", isgrounded);
 			StartCoroutine(Jump ());
 		}
 		if (isgrounded == false) {
@@ -148,6 +155,6 @@ public class P1move : MonoBehaviour {
 
 		//make sure model is facing correct direction
 		rigidbody.transform.rotation = Quaternion.identity;
-		rigidbody.transform.Rotate (0, 270, 0);
+		rigidbody.transform.Rotate (0, 0, 0);
 	}
 }

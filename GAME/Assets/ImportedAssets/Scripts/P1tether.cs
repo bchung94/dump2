@@ -3,11 +3,6 @@ using System.Collections;
 
 public class P1tether : MonoBehaviour {
 
-	// for animation
-	private Animator animatorControl;
-	private int player = 1;
-
-	// intialize
 	private GameObject player2;
 	private GameObject background;
 	private BackgroundScroll scroll;
@@ -15,18 +10,14 @@ public class P1tether : MonoBehaviour {
 	public float distX, distY;
 	public float speed, speed2;
 	public bool checktether;
-	
+	public bool tethered;
 
 	// Use this for initialization
 	void Start () {
 		speed = 0;
 		speed2 = 0;
 		checktether = false;
-
-		// SET tether animation
-		SetPlayers setPlayer = gameObject.GetComponent<SetPlayers> ();
-		animatorControl = setPlayer.getAnimator(player);
-		animatorControl.SetBool("Pulled", checktether);
+		tethered = false;
 	}
 	
 	// Update is called once per frame
@@ -39,12 +30,8 @@ public class P1tether : MonoBehaviour {
 					Xpos = transform.position.x;
 					Ypos = transform.position.y;
 					checktether = true;
+					tethered = true;
 				}
-
-		// tether animation
-		int directionPulled = (int)(player2.transform.position.x - transform.position.x);
-		animatorControl.SetBool("Pulled", checktether);
-		animatorControl.SetInteger("Direction", directionPulled);
 
 		if (checktether == true) {
 
@@ -81,6 +68,7 @@ public class P1tether : MonoBehaviour {
 			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)||(transform.position.x - player2.transform.position.x >= (distX/3))) {
 				speed = 0;
 				checktether = false;
+				tethered = false;
 				bgScroll.speed = bgScroll.normalSpeed;
 				//undo boost to foreground speed for all generated obstacles
 				foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {

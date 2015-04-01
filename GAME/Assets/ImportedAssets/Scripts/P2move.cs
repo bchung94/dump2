@@ -3,7 +3,9 @@ using System.Collections;
 
 public class P2move : MonoBehaviour {
 
-	private Animator animator;
+	// for animation
+	private Animator animatorControl;	// get animator from specified game object
+	private int player = 1;
 
 	//private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(5, 0, 0);
@@ -16,14 +18,16 @@ public class P2move : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		animator = GetComponent<Animator>();
-		animator.SetBool("Jump", false);
+		// SET jump animtion
+		SetPlayers setPlayer = gameObject.GetComponent<SetPlayers> ();
+		animatorControl = setPlayer.getAnimator(player);
+		animatorControl.SetBool("Jump", false);
 	}
 	
 	void OnCollisionEnter (Collision collision) {
 		if (collision.gameObject.tag == "Floor") {
 			isgrounded = true;	
-			animator.SetBool("Jump", false);
+			animatorControl.SetBool("Jump", false);
 		}
 	}
 	
@@ -47,7 +51,7 @@ public class P2move : MonoBehaviour {
 			rigidbody.MovePosition(rigidbody.position + side * Time.deltaTime);
 		}
 		if ((Input.GetKey (KeyCode.UpArrow)) && (isgrounded == true)) {
-			animator.SetTrigger("Jump");
+			animatorControl.SetTrigger("Jump");
 			StartCoroutine(Jump ());
 		}
 		if (isgrounded == false) {

@@ -93,7 +93,7 @@ ModelImporter:
     13700008: H_Robot_Rig:R_shoulder_geo
     13700010: H_Robot_Rig:waist_geo
   materials:
-    importMaterials: 1
+    importMaterials: 0
     materialName: 0
     materialSearch: 1
   animations:
@@ -114,7 +114,7 @@ ModelImporter:
     globalScale: .100000001
     meshCompression: 0
     addColliders: 0
-    importBlendShapes: 1
+    importBlendShapes: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
