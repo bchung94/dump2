@@ -50,7 +50,7 @@ public class P1move : MonoBehaviour {
 		genLevel.speed = genLevel.fastSpeed;
 		
 		// Boost background speed
-		bgScroll.speed = bgScroll.fastSpeed;
+		bgScroll.speed = 1.0f;
 
 		// Duration of boost
 		yield return new WaitForSeconds (speedBumpDuration);
@@ -66,7 +66,7 @@ public class P1move : MonoBehaviour {
 		genLevel.speed = genLevel.normalSpeed;
 
 		// Undo boosted speed for background
-		bgScroll.speed = bgScroll.normalSpeed;
+		bgScroll.speed = 0.5f;
 	}
 
 	//block powerup function
@@ -77,7 +77,7 @@ public class P1move : MonoBehaviour {
 		player2 = GameObject.Find ("Player2");
 
 		//if either player is being tethered then let pass
-		if ((player1.GetComponent<P1tether>().tethered == true) || (player2.GetComponent<P2tether>().tethered == true)) {
+		if ((player1.GetComponent<P1tether>().checktether == true) || (player2.GetComponent<P2tether>().tethered == true)) {
 			cube.layer = 9;
 		}
 

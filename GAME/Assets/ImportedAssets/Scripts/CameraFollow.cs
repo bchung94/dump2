@@ -20,8 +20,11 @@ public class CameraFollow: MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//find player1 and follow his height
 		player1 = GameObject.Find ("Player1");
 		height = (float)player1.transform.position.y;
+
+		//if player drops and falls, reset camera to default
 		if (height >= maxHeight) {
 			this.gameObject.transform.position = new Vector3(defaultX, height, defaultZ);
 		}

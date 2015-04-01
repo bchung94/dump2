@@ -3,6 +3,7 @@ using System.Collections;
 
 public class GenerateLevelSets : MonoBehaviour {
 
+	//models to generate
 	public GameObject EasyStart;
 	public GameObject Easy1;
 	public GameObject Easy2;
@@ -38,6 +39,7 @@ public class GenerateLevelSets : MonoBehaviour {
 		speed = normalSpeed;
 	}
 
+	//adds a floor tag to each generated building so player can jump on the set
 	IEnumerator addTag(Transform trans) {
 		trans.gameObject.tag = "Floor";
 		if (trans.childCount > 0) {
@@ -50,6 +52,7 @@ public class GenerateLevelSets : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		//changes difficulty level ||Manual for now||
 		if (Input.GetKeyDown (KeyCode.P)) {
 			difficulty += 1;
 			if (difficulty == 4) {
