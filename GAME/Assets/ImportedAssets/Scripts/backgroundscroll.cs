@@ -2,15 +2,9 @@
 using System.Collections;
 
 public class BackgroundScroll : MonoBehaviour {
-
-	public float speed;
-
-	public float fastSpeed = 0.1f;
-	public float normalSpeed = 0.05f;
-
+	public float speed = 0.5f;
 	// Use this for initialization
 	void Start () {
-		speed = normalSpeed;
 	}
 
 	// Update is called once per frame

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class IdleCheck : MonoBehaviour {
@@ -20,6 +20,7 @@ public class IdleCheck : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		//checks for forward collision and enters idle animation
 		Vector3 fwd = transform.TransformDirection (Vector3.back);
 		Debug.DrawRay(transform.position, fwd, Color.red);
 		if(Physics.Raycast(transform.position, fwd, out hit, 1.0f)) {

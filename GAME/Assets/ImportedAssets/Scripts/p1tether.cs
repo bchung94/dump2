@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class P1tether : MonoBehaviour {
@@ -31,13 +31,19 @@ public class P1tether : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-		//input timer for tether button
+		//find player2 and lock location for future reference
 		player2 = GameObject.Find ("Player2");
 		if ((Input.GetKey (KeyCode.E))&&(player2.transform.position.x > transform.position.x)) {
+					
+					//set total future distance to be travelled
 					distX = (Mathf.Abs (player2.transform.position.x - transform.position.x)) * 1.5f;
 					distY = (Mathf.Abs (player2.transform.position.y - transform.position.y)) * 1.5f;
+					
+					//save initial coordinates
 					Xpos = transform.position.x;
 					Ypos = transform.position.y;
+
+					//begin tether!
 					checktether = true;
 				}
 
@@ -48,16 +54,21 @@ public class P1tether : MonoBehaviour {
 
 		if (checktether == true) {
 
-			background = GameObject.Find("Backdrop1");
+			//speed up background speed while tether animation is running
+			background = GameObject.Find("Background");
 			BackgroundScroll bgScroll = background.GetComponent<BackgroundScroll>();
 
 			float speedIncrease = 0.01f;
 
+			//if the distance travelled puts player1 past 2/3rds of the screen
 			if ((Xpos + distX) >= 4) {
+				//change tether mechanic to push player2 back so player1 stays
+				//within first 2/3rds of screen
 				if(Mathf.Abs(transform.position.x - Xpos) < (distX/2)) {
 					transform.position += new Vector3 (speed, 0, 0);
 					player2.transform.position -= new Vector3 (speed, 0, 0);
 					speed += speedIncrease;
+
 					//Boost foreground speed for all generated obstacles
 					foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
 						DestroySet destroySet = check.GetComponent<DestroySet> ();
@@ -65,19 +76,23 @@ public class P1tether : MonoBehaviour {
 							destroySet.speed = destroySet.fastSpeed;
 						}
 					}
-					bgScroll.speed = bgScroll.fastSpeed;
+					bgScroll.speed = 1.0f;
 				}
 			}
+			//normal tether that just pulls player1 forward
 			else {
 				if(Mathf.Abs(transform.position.x - Xpos) < distX) {
 					transform.position += new Vector3 (speed, 0, 0);
 					speed += speedIncrease;
 				}
 			}
+			//tether upwards as well depending on difference in height
 			if(Mathf.Abs(transform.position.y - Ypos) < distY) {
 				transform.position += new Vector3 (0, speed2, 0);
 				speed2 += speedIncrease;
 			}
+
+			//reset variables once tether distance is travelled
 			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)||(transform.position.x - player2.transform.position.x >= (distX/3))) {
 				speed = 0;
 				checktether = false;
@@ -90,6 +105,8 @@ public class P1tether : MonoBehaviour {
 					}
 				}
 			}
+
+			//stop tethering upwards once max height is reached
 			if (Mathf.Abs(transform.position.y - Ypos) >= distY) {
 				speed2 = 0;
 			}
