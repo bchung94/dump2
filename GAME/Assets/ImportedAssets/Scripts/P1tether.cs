@@ -5,7 +5,6 @@ public class P1tether : MonoBehaviour {
 
 	// for animation
 	private Animator animatorControl;
-	private int player = 1;
 
 	// intialize
 	private GameObject player2;
@@ -24,8 +23,7 @@ public class P1tether : MonoBehaviour {
 		checktether = false;
 
 		// SET tether animation
-		SetPlayers setPlayer = gameObject.GetComponent<SetPlayers> ();
-		animatorControl = setPlayer.getAnimator(player);
+		animatorControl = GetComponentInChildren<Animator>();
 		animatorControl.SetBool("Pulled", checktether);
 	}
 	

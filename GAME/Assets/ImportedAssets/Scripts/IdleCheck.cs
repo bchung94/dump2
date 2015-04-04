@@ -5,7 +5,6 @@ public class IdleCheck : MonoBehaviour {
 
 	// Animation
 	private Animator animatorControl;
-	private int player = 1;
 
 	private RaycastHit hit;
 	public string collide;

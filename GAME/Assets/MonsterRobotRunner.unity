@@ -6210,7 +6210,6 @@ GameObject:
   - 4: {fileID: 448084248}
   - 54: {fileID: 448084251}
   - 136: {fileID: 448084250}
-  - 114: {fileID: 448084253}
   - 114: {fileID: 448084249}
   - 114: {fileID: 448084252}
   - 114: {fileID: 448084255}
@@ -6290,19 +6289,6 @@ MonoBehaviour:
   speed: 0
   speed2: 0
   checktether: 0
---- !u!114 &448084253
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 448084247}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f98727103ada72545a508061297c0bd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isgrounded: 0
-  collide: 
 --- !u!114 &448084255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7427,7 +7413,6 @@ GameObject:
   - 4: {fileID: 489538761}
   - 54: {fileID: 489538766}
   - 136: {fileID: 489538765}
-  - 114: {fileID: 489538764}
   - 114: {fileID: 489538763}
   - 114: {fileID: 489538767}
   - 114: {fileID: 489538762}
@@ -7483,18 +7468,6 @@ MonoBehaviour:
   speed2: 0
   check: 0
   tethered: 0
---- !u!114 &489538764
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 489538760}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cb580c80ef9df41f78e3c3e8555ad0a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isgrounded: 0
 --- !u!136 &489538765
 CapsuleCollider:
   m_ObjectHideFlags: 0
