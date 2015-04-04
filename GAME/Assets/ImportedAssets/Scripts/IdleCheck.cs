@@ -13,9 +13,8 @@ public class IdleCheck : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		// SET Idle Animation
-		SetPlayers setPlayer = gameObject.GetComponent<SetPlayers> ();
-		animatorControl = setPlayer.getAnimator(player);
-		//animatorControl.SetBool("Stop", false);
+		animatorControl = GetComponentInChildren<Animator>();
+		animatorControl.SetBool("Stop", false);
 	}
 	
 	// Update is called once per frame

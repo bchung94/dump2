@@ -1677,7 +1677,7 @@ SkinnedMeshRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7897c2b202beb438ebb0081a0a076d54, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6210,10 +6210,10 @@ GameObject:
   - 4: {fileID: 448084248}
   - 54: {fileID: 448084251}
   - 136: {fileID: 448084250}
-  - 114: {fileID: 448084254}
   - 114: {fileID: 448084253}
   - 114: {fileID: 448084249}
   - 114: {fileID: 448084252}
+  - 114: {fileID: 448084255}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -6258,7 +6258,7 @@ CapsuleCollider:
   m_Radius: .5
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -.100000001, z: 0}
 --- !u!54 &448084251
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6268,11 +6268,11 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: .0500000007
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!114 &448084252
 MonoBehaviour:
@@ -6296,14 +6296,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 448084247}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f98727103ada72545a508061297c0bd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   isgrounded: 0
   collide: 
---- !u!114 &448084254
+--- !u!114 &448084255
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
@@ -6311,10 +6311,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 448084247}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a291d6b961e4a7a81b594c33f6e625, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0206a903d78445ca0966ff40fd2f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 445930300}
+  isgrounded: 0
+  collide: 
 --- !u!1 &451289122
 GameObject:
   m_ObjectHideFlags: 0
@@ -7426,10 +7427,10 @@ GameObject:
   - 4: {fileID: 489538761}
   - 54: {fileID: 489538766}
   - 136: {fileID: 489538765}
-  - 114: {fileID: 489538762}
   - 114: {fileID: 489538764}
   - 114: {fileID: 489538763}
   - 114: {fileID: 489538767}
+  - 114: {fileID: 489538762}
   m_Layer: 9
   m_Name: Player2
   m_TagString: Player
@@ -7458,10 +7459,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 489538760}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92a291d6b961e4a7a81b594c33f6e625, type: 3}
+  m_Script: {fileID: 11500000, guid: ff0206a903d78445ca0966ff40fd2f77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerObject: {fileID: 264670198}
+  isgrounded: 0
+  collide: 
 --- !u!114 &489538763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7487,7 +7489,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 489538760}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb580c80ef9df41f78e3c3e8555ad0a3, type: 3}
   m_Name: 
@@ -12055,6 +12057,10 @@ Prefab:
       propertyPath: m_CullingMode
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 13700000, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7897c2b202beb438ebb0081a0a076d54, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
   m_RootGameObject: {fileID: 264670198}

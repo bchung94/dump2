@@ -15,7 +15,7 @@ public class P2tether : MonoBehaviour {
 		speed = 0;
 		speed2 = 0;
 		check = false;
-		tethered = false;
+		tethered = false;	
 	}
 	
 	// Update is called once per frame
@@ -65,6 +65,7 @@ public class P2tether : MonoBehaviour {
 				}
 				if (Mathf.Abs(transform.position.y - Ypos) >= distY) {
 					speed2 = 0;
+
 				}
 			}
 		}

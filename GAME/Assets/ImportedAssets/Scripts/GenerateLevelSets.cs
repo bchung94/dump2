@@ -23,10 +23,10 @@ public class GenerateLevelSets : MonoBehaviour {
 	private float timermax;
 	public int random;
 	public int difficulty;
-	public int speed;
+	public float speed;
 
-	public int normalSpeed = 1;
-	public int fastSpeed = 3;
+	public float normalSpeed = 4.8f;
+	public float fastSpeed = 3f;
 
 	// Use this for initialization
 	void Start () {
