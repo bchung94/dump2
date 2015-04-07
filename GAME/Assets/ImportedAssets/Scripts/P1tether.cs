@@ -14,7 +14,7 @@ public class P1tether : MonoBehaviour {
 	public float distX, distY;
 	public float speed, speed2;
 	public bool checktether;
-	
+	public bool inFront;
 
 	// Use this for initialization
 	void Start () {
@@ -31,7 +31,7 @@ public class P1tether : MonoBehaviour {
 	void FixedUpdate () {
 		//find player2 and lock location for future reference
 		player2 = GameObject.Find ("Player2");
-		if ((Input.GetKey (KeyCode.E))&&(player2.transform.position.x > transform.position.x)) {
+		if ((Input.GetKey (KeyCode.E))) {
 					
 					//set total future distance to be travelled
 					distX = (Mathf.Abs (player2.transform.position.x - transform.position.x)) * 1.5f;
@@ -40,7 +40,14 @@ public class P1tether : MonoBehaviour {
 					//save initial coordinates
 					Xpos = transform.position.x;
 					Ypos = transform.position.y;
-
+					
+					//check if player2 is in front or behind
+					if (player2.transform.position.x > transform.position.x) {
+						inFront = true;
+					}
+					else {
+						inFront = false;
+					}
 					//begin tether!
 					checktether = true;
 				}
@@ -58,29 +65,37 @@ public class P1tether : MonoBehaviour {
 
 			float speedIncrease = 0.01f;
 
-			//if the distance travelled puts player1 past 2/3rds of the screen
-			if ((Xpos + distX) >= 4) {
-				//change tether mechanic to push player2 back so player1 stays
-				//within first 2/3rds of screen
-				if(Mathf.Abs(transform.position.x - Xpos) < (distX/2)) {
-					transform.position += new Vector3 (speed, 0, 0);
-					player2.transform.position -= new Vector3 (speed, 0, 0);
-					speed += speedIncrease;
+			if (inFront == true) {
+				//if the distance travelled puts player1 past 2/3rds of the screen
+				if ((Xpos + distX) >= 4) {
+					//change tether mechanic to push player2 back so player1 stays
+					//within first 2/3rds of screen
+					if(Mathf.Abs(transform.position.x - Xpos) < (distX/2)) {
+						transform.position += new Vector3 (speed, 0, 0);
+						player2.transform.position -= new Vector3 (speed, 0, 0);
+						speed += speedIncrease;
 
-					//Boost foreground speed for all generated obstacles
-					foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
-						DestroySet destroySet = check.GetComponent<DestroySet> ();
-						if (destroySet != null) {
-							destroySet.speed = destroySet.fastSpeed;
+						//Boost foreground speed for all generated obstacles
+						foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
+							DestroySet destroySet = check.GetComponent<DestroySet> ();
+							if (destroySet != null) {
+								destroySet.speed = destroySet.fastSpeed;
+							}
 						}
+						bgScroll.speed = 1.0f;
 					}
-					bgScroll.speed = bgScroll.normalSpeed;
+				}
+				//normal tether that just pulls player1 forward
+				else {
+					if(Mathf.Abs(transform.position.x - Xpos) < distX) {
+						transform.position += new Vector3 (speed, 0, 0);
+						speed += speedIncrease;
+					}
 				}
 			}
-			//normal tether that just pulls player1 forward
 			else {
 				if(Mathf.Abs(transform.position.x - Xpos) < distX) {
-					transform.position += new Vector3 (speed, 0, 0);
+					transform.position -= new Vector3 (speed, 0, 0);
 					speed += speedIncrease;
 				}
 			}
@@ -91,7 +106,7 @@ public class P1tether : MonoBehaviour {
 			}
 
 			//reset variables once tether distance is travelled
-			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)||(transform.position.x - player2.transform.position.x >= (distX/3))) {
+			if ((Mathf.Abs(transform.position.x - Xpos) >= distX)) {
 				speed = 0;
 				checktether = false;
 				bgScroll.speed = bgScroll.normalSpeed;
