@@ -7,6 +7,9 @@ public class StartNetwork : MonoBehaviour {
 	private const string gamename = "test";
 	private HostData[] hostlist;
 	public GameObject p2prefab;
+	public GameObject p1;
+	public GameObject p2;
+	private NetworkViewID id;
 
 	// Use this for initialization
 	void StartServer() {
@@ -16,7 +19,8 @@ public class StartNetwork : MonoBehaviour {
 
 	void OnServerInitialized() {
 		Debug.Log ("Server started!");
-		SpawnPlayer ();
+		id = Network.AllocateViewID ();
+		p1.networkView.viewID = id;
 	}
 
 	private void RefreshHostList() {
@@ -35,7 +39,8 @@ public class StartNetwork : MonoBehaviour {
 
 	void OnConnectedToServer() {
 		Debug.Log ("Server joined");
-		SpawnPlayer ();
+		id = Network.AllocateViewID ();
+		p2.networkView.viewID = id;
 	}
 
 	private void SpawnPlayer() {
