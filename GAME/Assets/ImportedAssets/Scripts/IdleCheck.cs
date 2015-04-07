@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class IdleCheck : MonoBehaviour {
-
+	
 	// Animation
 	private Animator animatorControl;
-
+	
 	private RaycastHit hit;
 	public string collide;
 	
@@ -23,10 +23,10 @@ public class IdleCheck : MonoBehaviour {
 		Debug.DrawRay(transform.position, fwd, Color.red);
 		if(Physics.Raycast(transform.position, fwd, out hit, 1.0f)) {
 			collide = hit.collider.gameObject.name;
-			if (collide == "Player2" || collide == "Cube") {
+			if (collide == "Cube") {
 				//Idle animation
 				animatorControl.SetBool("Stop", true);
-				Debug.Log ("STopped");
+				//Debug.Log ("STopped");
 			} else
 			{
 				animatorControl.SetBool("Stop", false);

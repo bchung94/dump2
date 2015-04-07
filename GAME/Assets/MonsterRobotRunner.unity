@@ -3808,7 +3808,7 @@ Animator:
   m_GameObject: {fileID: 264670198}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
-  m_Controller: {fileID: 9100000, guid: 06abbe7fa6e4f43e39d914aa495bde42, type: 2}
+  m_Controller: {fileID: 9100000, guid: 68d99465051d348a1a0b099f89ac2d00, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -6213,6 +6213,7 @@ GameObject:
   - 114: {fileID: 448084249}
   - 114: {fileID: 448084252}
   - 114: {fileID: 448084255}
+  - 148: {fileID: 448084253}
   m_Layer: 9
   m_Name: Player1
   m_TagString: Player
@@ -6289,6 +6290,19 @@ MonoBehaviour:
   speed: 0
   speed2: 0
   checktether: 0
+  inFront: 0
+--- !u!148 &448084253
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 448084247}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 448084248}
+  m_ViewID:
+    m_ID: 1
+    m_Type: 1
 --- !u!114 &448084255
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7416,6 +7430,7 @@ GameObject:
   - 114: {fileID: 489538763}
   - 114: {fileID: 489538767}
   - 114: {fileID: 489538762}
+  - 148: {fileID: 489538764}
   m_Layer: 9
   m_Name: Player2
   m_TagString: Player
@@ -7468,6 +7483,18 @@ MonoBehaviour:
   speed2: 0
   check: 0
   tethered: 0
+--- !u!148 &489538764
+NetworkView:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 489538760}
+  m_Enabled: 1
+  m_StateSynchronization: 1
+  m_Observed: {fileID: 489538761}
+  m_ViewID:
+    m_ID: 2
+    m_Type: 1
 --- !u!136 &489538765
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -12025,7 +12052,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 06abbe7fa6e4f43e39d914aa495bde42, type: 2}
+      objectReference: {fileID: 9100000, guid: 68d99465051d348a1a0b099f89ac2d00, type: 2}
     - target: {fileID: 9500000, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
       propertyPath: m_CullingMode
       value: 0
@@ -13299,7 +13326,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 994576974}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.1099997, y: 10.1599998, z: 0}
+  m_LocalPosition: {x: 12.1099997, y: 13.4200001, z: 0}
   m_LocalScale: {x: 1, y: 4, z: 3}
   m_Children: []
   m_Father: {fileID: 0}

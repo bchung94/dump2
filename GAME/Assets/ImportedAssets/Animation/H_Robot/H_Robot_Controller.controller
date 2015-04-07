@@ -26,13 +26,13 @@ AnimatorController:
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Direction
-    m_Type: 3
+  - m_Name: Pulled
+    m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
     m_Controller: {fileID: 9100000}
-  - m_Name: Pulled
+  - m_Name: IsFront
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
@@ -50,6 +50,26 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
+--- !u!1101 &110101672
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110206594}
+  m_DstState: {fileID: 110280308}
+  m_TransitionDuration: 1.19999981
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Tether
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
 --- !u!1101 &110110112
 Transition:
   serializedVersion: 2
@@ -66,8 +86,8 @@ Transition:
     m_ConditionEvent: Pulled
     m_EventTreshold: 0
     m_ExitTime: .899999976
-  - m_ConditionMode: 3
-    m_ConditionEvent: Direction
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsFront
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -146,8 +166,8 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 4
-    m_ConditionEvent: Direction
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsFront
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 1
@@ -172,6 +192,26 @@ Transition:
   m_Conditions:
   - m_ConditionMode: 2
     m_ConditionEvent: Pulled
+    m_EventTreshold: 0
+    m_ExitTime: 0
+  m_Atomic: 1
+  m_Solo: 0
+  m_Mute: 0
+  m_CanTransitionToSelf: 0
+--- !u!1101 &110171644
+Transition:
+  serializedVersion: 2
+  m_ObjectHideFlags: 3
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: 
+  m_SrcState: {fileID: 110292212}
+  m_DstState: {fileID: 110280308}
+  m_TransitionDuration: 1.19999981
+  m_TransitionOffset: 0
+  m_Conditions:
+  - m_ConditionMode: 2
+    m_ConditionEvent: Tether
     m_EventTreshold: 0
     m_ExitTime: 0
   m_Atomic: 1
@@ -210,8 +250,8 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Direction
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsFront
     m_EventTreshold: 0
     m_ExitTime: .899999976
   - m_ConditionMode: 1
@@ -258,8 +298,8 @@ Transition:
     m_ConditionEvent: Pulled
     m_EventTreshold: 0
     m_ExitTime: .899999976
-  - m_ConditionMode: 4
-    m_ConditionEvent: Direction
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsFront
     m_EventTreshold: 0
     m_ExitTime: .899999976
   m_Atomic: 1
@@ -292,7 +332,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 8a272303d613840cc877c0f6bc18787d, type: 3}
   m_ParentStateMachine: {fileID: 110735912}
-  m_Position: {x: 84, y: 120, z: 0}
+  m_Position: {x: -276, y: 144, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -337,7 +377,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 4a60729e7e0254054989c39fd2a39629, type: 3}
   m_ParentStateMachine: {fileID: 110735912}
-  m_Position: {x: 72, y: 240, z: 0}
+  m_Position: {x: -12, y: 252, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -352,7 +392,7 @@ State:
   m_Motions:
   - {fileID: 7400000, guid: 61d10c263c8d14af283d959a3cafc7fb, type: 3}
   m_ParentStateMachine: {fileID: 110735912}
-  m_Position: {x: -204, y: 168, z: 0}
+  m_Position: {x: -12, y: 144, z: 0}
   m_IKOnFeet: 0
   m_Mirror: 0
   m_Tag: 
@@ -420,10 +460,12 @@ StateMachine:
       - {fileID: 110136910}
     data:
       first: {fileID: 110206594}
-      second: []
+      second:
+      - {fileID: 110101672}
     data:
       first: {fileID: 110292212}
-      second: []
+      second:
+      - {fileID: 110171644}
   m_MotionSetCount: 1
   m_AnyStatePosition: {x: 48, y: -60, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}

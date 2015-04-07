@@ -53,9 +53,8 @@ public class P1tether : MonoBehaviour {
 				}
 
 		// tether animation
-		int directionPulled = (int)(player2.transform.position.x - transform.position.x);
 		animatorControl.SetBool("Pulled", checktether);
-		animatorControl.SetInteger("Direction", directionPulled);
+		animatorControl.SetBool("IsFront", inFront);
 
 		if (checktether == true) {
 
@@ -82,7 +81,7 @@ public class P1tether : MonoBehaviour {
 								destroySet.speed = destroySet.fastSpeed;
 							}
 						}
-						bgScroll.speed = 1.0f;
+						bgScroll.speed = bgScroll.normalSpeed;
 					}
 				}
 				//normal tether that just pulls player1 forward
