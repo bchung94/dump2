@@ -74,7 +74,7 @@ public class P1tether : MonoBehaviour {
 							destroySet.speed = destroySet.fastSpeed;
 						}
 					}
-					bgScroll.speed = 1.0f;
+					bgScroll.speed = bgScroll.normalSpeed;
 				}
 			}
 			//normal tether that just pulls player1 forward

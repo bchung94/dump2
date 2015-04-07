@@ -362,7 +362,7 @@ State:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: jump
-  m_Speed: 1
+  m_Speed: .899999976
   m_CycleOffset: 0
   m_Motions:
   - {fileID: 7400000, guid: 07b3201dd4e07481193a83546357fdf2, type: 3}
@@ -398,14 +398,14 @@ StateMachine:
       - {fileID: 110155722}
       - {fileID: 110144276}
     data:
-      first: {fileID: 110273206}
-      second:
-      - {fileID: 110106932}
-    data:
       first: {fileID: 110256790}
       second:
       - {fileID: 110142850}
       - {fileID: 110111816}
+    data:
+      first: {fileID: 110273206}
+      second:
+      - {fileID: 110106932}
     data:
       first: {fileID: 110251680}
       second:

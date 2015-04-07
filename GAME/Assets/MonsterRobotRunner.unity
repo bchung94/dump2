@@ -3791,12 +3791,12 @@ Transform:
   m_PrefabInternal: {fileID: 895593195}
   m_GameObject: {fileID: 264670198}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1901862502}
   - {fileID: 1843807508}
-  m_Father: {fileID: 489538761}
+  m_Father: {fileID: 448084248}
   m_RootOrder: 0
 --- !u!95 &264670200
 Animator:
@@ -5675,11 +5675,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 448084248}
+    m_TransformParent: {fileID: 489538761}
     m_Modifications:
     - target: {fileID: 400074, guid: 8a1c78db9fe0f455691d4541be8e80cc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400074, guid: 8a1c78db9fe0f455691d4541be8e80cc, type: 3}
       propertyPath: m_LocalPosition.y
@@ -6177,12 +6177,12 @@ Transform:
   m_PrefabInternal: {fileID: 411963446}
   m_GameObject: {fileID: 445930300}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2002614106}
   - {fileID: 1342776145}
-  m_Father: {fileID: 448084248}
+  m_Father: {fileID: 489538761}
   m_RootOrder: 0
 --- !u!95 &445930302
 Animator:
@@ -6230,7 +6230,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 445930301}
+  - {fileID: 264670199}
   m_Father: {fileID: 0}
   m_RootOrder: 14
 --- !u!114 &448084249
@@ -7433,7 +7433,7 @@ Transform:
   m_LocalPosition: {x: 1, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 264670199}
+  - {fileID: 445930301}
   m_Father: {fileID: 0}
   m_RootOrder: 15
 --- !u!114 &489538762
@@ -11956,11 +11956,11 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 489538761}
+    m_TransformParent: {fileID: 448084248}
     m_Modifications:
     - target: {fileID: 400054, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400054, guid: 8d95b12d02b18488e868f269081ce987, type: 3}
       propertyPath: m_LocalPosition.y

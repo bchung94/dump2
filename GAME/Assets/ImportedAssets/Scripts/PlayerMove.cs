@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour {
 	// set values
 	//private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(6, 0, 0);	// movement speed
-	private Vector3 up = new Vector3(0, 12, 0);	// jump height
+	private Vector3 up = new Vector3(0, 10, 0);	// jump height
 	private Vector3 extragrav = new Vector3(0, -13, 0);
 	
 	private float speedBumpDuration = 0.5f;
