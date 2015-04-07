@@ -40,7 +40,8 @@ public class P1tether : MonoBehaviour {
 					//save initial coordinates
 					Xpos = transform.position.x;
 					Ypos = transform.position.y;
-
+					
+					//check if player2 is in front or behind
 					if (player2.transform.position.x > transform.position.x) {
 						inFront = true;
 					}
