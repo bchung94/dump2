@@ -2,7 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class IdleCheck : MonoBehaviour {
-	
+
+	// default labels
+	private string powerupWallLabel = "Cube";
+
 	// Animation
 	private Animator animatorControl;
 	
@@ -23,7 +26,7 @@ public class IdleCheck : MonoBehaviour {
 		Debug.DrawRay(transform.position, fwd, Color.red);
 		if(Physics.Raycast(transform.position, fwd, out hit, 1.0f)) {
 			collide = hit.collider.gameObject.name;
-			if (collide == "Cube") {
+			if (collide == powerupWallLabel) {
 				//Idle animation
 				animatorControl.SetBool("Stop", true);
 				//Debug.Log ("STopped");

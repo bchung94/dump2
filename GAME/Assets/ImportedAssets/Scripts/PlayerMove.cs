@@ -3,7 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class PlayerMove : MonoBehaviour {
-	
+
+	// default labels
+	private string player1Label = "Player1";
+	private string player2Label = "Player2";
+	private string backdropLabel = "Backdrop1";
+	private string groundTag = "Floor";
+	private string powerupSpeedLabel = "Sphere";
+	private string powerupWallLabel = "Cube";
+
 	// for animation
 	private Animator animatorControl;	// get animator from specified game object
 	
@@ -41,20 +49,22 @@ public class PlayerMove : MonoBehaviour {
 			player1.Add ("jump", KeyCode.Space);
 			player1.Add ("back", KeyCode.A);
 			player1.Add ("front", KeyCode.D);
-			keyControls.Add ("Player1", player1);
+			player1.Add ("temp", KeyCode.T);
+			keyControls.Add (player1Label, player1);
 
 			player2.Add ("jump", KeyCode.UpArrow);
 			player2.Add ("back", KeyCode.LeftArrow);
 			player2.Add ("front", KeyCode.RightArrow);
-			keyControls.Add ("Player2", player2);
+			player2.Add ("temp", KeyCode.Y);
+			keyControls.Add (player2Label, player2);
 
 			// check which game object it is connnected to
-			if (gameObject.name == "Player1") {
-				currentPlayer = "Player1";
-				otherPlayer = "Player2";
-			} else if (gameObject.name == "Player2") {
-				currentPlayer = "Player2";
-				otherPlayer = "Player1";
+			if (gameObject.name == player1Label) {
+				currentPlayer = player1Label;
+				otherPlayer = player2Label;
+			} else if (gameObject.name == player2Label) {
+				currentPlayer = player2Label;
+				otherPlayer = player1Label;
 			}
 		}
 		
@@ -65,14 +75,14 @@ public class PlayerMove : MonoBehaviour {
 			GameObject background;
 			GameObject generator;
 			
-			background = GameObject.Find ("Backdrop1");
-			generator = GameObject.Find ("Floor");
+			background = GameObject.Find (backdropLabel);
+			generator = GameObject.Find (groundTag);
 			
 			BackgroundScroll bgScroll = background.GetComponent<BackgroundScroll> ();
 			GenerateLevelSets genLevel = generator.GetComponent<GenerateLevelSets> ();
 			
 			// Boost foreground speed for all generated obstacles
-			foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
+			foreach(GameObject check in GameObject.FindGameObjectsWithTag (groundTag)) {
 				DestroySet destroySet = check.GetComponent<DestroySet>();
 				if (destroySet != null) {
 					destroySet.speed = destroySet.fastSpeed;
@@ -89,7 +99,7 @@ public class PlayerMove : MonoBehaviour {
 			yield return new WaitForSeconds (speedBumpDuration);
 			
 			// Boost foreground speed for all generated obstacles
-			foreach(GameObject check in GameObject.FindGameObjectsWithTag ("Floor")) {
+			foreach(GameObject check in GameObject.FindGameObjectsWithTag (groundTag)) {
 				DestroySet destroySet = check.GetComponent<DestroySet>();
 				if (destroySet != null) {
 					destroySet.speed = destroySet.normalSpeed;
@@ -105,12 +115,13 @@ public class PlayerMove : MonoBehaviour {
 		//block powerup function
 		IEnumerator Block() {
 			GameObject player1, player2, cube;
-			cube = GameObject.Find("Cube");
-			player1 = GameObject.Find ("Player1");
-			player2 = GameObject.Find ("Player2");
+			cube = GameObject.Find(powerupWallLabel);
+			player1 = GameObject.Find (player1Label);
+			player2 = GameObject.Find (player2Label);
 			
 			//if either player is being tethered then let pass
-			if ((player1.GetComponent<P1tether>().checktether == true) || (player2.GetComponent<P2tether>().tethered == true)) {
+			if ((player1.GetComponent<PlayerTether>().checkPulledCurrentPlayer == true) || 
+		    	(player2.GetComponent<PlayerTether>().checkTetherOtherPlayer == true)) {
 				cube.layer = 9;
 			}
 
@@ -121,11 +132,11 @@ public class PlayerMove : MonoBehaviour {
 		
 		void OnCollisionEnter (Collision collision) {
 			// END jump animation
-			if (collision.gameObject.tag == "Floor") {
+			if (collision.gameObject.tag == groundTag) {
 				animatorControl.SetBool("Jump", false);
 			}
 			// check for collision with block powerup
-			if (collision.gameObject.name == "Cube") {
+			if (collision.gameObject.name == powerupWallLabel) {
 				StartCoroutine(Block ());
 			}
 		}
@@ -136,7 +147,7 @@ public class PlayerMove : MonoBehaviour {
 		}
 		
 		void OnCollisionExit (Collision collision) {
-			if (collision.gameObject.tag == "Floor") {
+			if (collision.gameObject.tag == groundTag) {
 				isgrounded = false;
 			}
 		}
@@ -149,8 +160,9 @@ public class PlayerMove : MonoBehaviour {
 		
 		// Update is called once per frame
 		void FixedUpdate () {
-		if (networkView.isMine) {
+		//if (networkView.isMine) {
 			Vector3 downray = transform.TransformDirection (Vector3.down);
+			//animatorControl.SetBool("Tether", false);
 			
 			//temporary forward and backwards movement
 			if (Input.GetKey (keyControls[currentPlayer]["back"])) {
@@ -159,13 +171,21 @@ public class PlayerMove : MonoBehaviour {
 			if (Input.GetKey (keyControls[currentPlayer]["front"])) {
 				rigidbody.MovePosition(rigidbody.position + side * Time.deltaTime);
 			}
-			
+			/*
+			if (Input.GetKey (keyControls [currentPlayer] ["temp"])) {
+			animatorControl.SetBool ("Tether", true);
+			Debug.Log ("Tether");
+			} else {
+				animatorControl.SetBool ("Tether", false);
+			}
+			*/
+
 			//cast ray to check if REALLY grounded
 			if (Physics.Raycast(transform.position, downray, out hit, 1)) {
 				collide = hit.collider.gameObject.name;
 				Debug.DrawRay(transform.position, downray, Color.green);
 				//make exceptions if grounded against powerups or other players
-				if (collide == otherPlayer || collide == "Sphere") {
+				if (collide == otherPlayer || collide == powerupSpeedLabel) {
 					isgrounded = false;
 				}
 				else {isgrounded = true;}
@@ -185,6 +205,7 @@ public class PlayerMove : MonoBehaviour {
 			//make sure model is facing correct direction
 			rigidbody.transform.rotation = Quaternion.identity;
 			rigidbody.transform.Rotate (0, 0, 0);
+			this.transform.GetChild(0).GetComponent<Transform>().localPosition = new Vector3(0,0,0);
 		}
-	}
+	//}
 }

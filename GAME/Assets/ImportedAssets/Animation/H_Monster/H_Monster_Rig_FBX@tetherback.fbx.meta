@@ -136,25 +136,25 @@ ModelImporter:
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint
         weight: 1
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:L_hip_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:L_hip_joint/H_Monster_Rig:L_knee_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:L_hip_joint/H_Monster_Rig:L_knee_joint/H_Monster_Rig:L_ankle_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:L_hip_joint/H_Monster_Rig:L_knee_joint/H_Monster_Rig:L_ankle_joint/H_Monster_Rig:L_foot_shadow_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:L_hip_joint/H_Monster_Rig:L_knee_joint/H_Monster_Rig:L_ankle_joint/H_Monster_Rig:L_foot_shadow_joint/H_Monster_Rig:L_toe_shadow_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:R_hip_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:R_hip_joint/H_Monster_Rig:R_knee_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:R_hip_joint/H_Monster_Rig:R_knee_joint/H_Monster_Rig:R_ankle_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:R_hip_joint/H_Monster_Rig:R_knee_joint/H_Monster_Rig:R_ankle_joint/H_Monster_Rig:R_foot_shadow_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:R_hip_joint/H_Monster_Rig:R_knee_joint/H_Monster_Rig:R_ankle_joint/H_Monster_Rig:R_foot_shadow_joint/H_Monster_Rig:R_toe_shadow_joint
-        weight: 1
+        weight: 0
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:tail_1_joint
         weight: 1
       - path: H_Monster_Rig:H_monster_joint_group/H_Monster_Rig:root_joint_group/H_Monster_Rig:ROOT/H_Monster_Rig:root_joint/H_Monster_Rig:waist_joint/H_Monster_Rig:tail_1_joint/H_Monster_Rig:tail_2_joint

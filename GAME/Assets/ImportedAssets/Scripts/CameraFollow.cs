@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CameraFollow: MonoBehaviour {
 
+	// default labels
+	private string player1Label = "Player1";
+
 	private GameObject player1;
 	private float height;
 
@@ -21,7 +24,7 @@ public class CameraFollow: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//find player1 and follow his height
-		player1 = GameObject.Find ("Player1");
+		player1 = GameObject.Find (player1Label);
 		height = (float)player1.transform.position.y;
 
 		//if player drops and falls, reset camera to default

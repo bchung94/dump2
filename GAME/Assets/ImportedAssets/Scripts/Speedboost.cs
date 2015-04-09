@@ -3,6 +3,11 @@ using System.Collections;
 
 public class Speedboost : MonoBehaviour {
 
+	// default labels
+	private string player1Label = "Player1";
+	private string player2Label = "Player2";
+	private string groundTag = "Floor";
+
 	private float speed;
 	private RaycastHit hit;
 	public string collide;
@@ -29,7 +34,7 @@ public class Speedboost : MonoBehaviour {
 			Debug.DrawRay(transform.position,downray,Color.green);
 
 			//if correct collision detected reposition powerup's height
-			if (collide != "Player2" && collide != "Player1" && collide != "Floor") {
+			if (collide != player2Label && collide != player1Label && collide != groundTag) {
 				height = hit.collider.gameObject.transform.position.y + 1.0f;
 				if (checker == false) {
 					transform.position += new Vector3(0,height,0);
@@ -44,7 +49,7 @@ public class Speedboost : MonoBehaviour {
 			Debug.DrawRay(transform.position,upray,Color.red);
 
 			//if correct collision detected reposition powerup's height
-			if (collide != "Player2" && collide != "Player1") {
+			if (collide != player2Label && collide != player1Label) {
 				height = hit.collider.gameObject.transform.position.y + 1.0f;
 				if (checker == false) {
 					transform.position += new Vector3(0,height,0);
