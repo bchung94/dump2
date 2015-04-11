@@ -9,6 +9,8 @@ public class PlayerTether : MonoBehaviour {
 	private string player2Label = "Player2";
 	private string backgroundLabel = "Background";
 	private string groundTag = "Floor";
+	//private string pullButtonLabel = "Pull Button";
+	//private string jumpButtonLabel = "Jump Button";
 	
 	// for animation
 	private Animator animatorControlCurrentPlayer;
@@ -25,6 +27,7 @@ public class PlayerTether : MonoBehaviour {
 	public bool checkTetherOtherPlayer;
 	public bool isFrontCurrentPlayer;
 	public bool isFrontOtherPlayer;
+	private string buttonClicked = "";
 
 	// values
 	private float speedIncrease;
@@ -74,6 +77,11 @@ public class PlayerTether : MonoBehaviour {
 		otherPlayerGameObject = GameObject.Find (otherPlayer);
 		animatorControlOtherPlayer = otherPlayerGameObject.GetComponentInChildren<Animator> ();
 		animatorControlOtherPlayer.SetBool ("Tether", checkTetherOtherPlayer);
+	}
+
+	public void clickButton (string button)
+	{
+		buttonClicked = button;
 	}
 
 	IEnumerator normalYTether() {
@@ -159,7 +167,8 @@ public class PlayerTether : MonoBehaviour {
 	void FixedUpdate () {
 
 		// find direction of characters
-		if (Input.GetKey (keyControls [currentPlayer] ["tether"]) || Input.GetKey (keyControls [otherPlayer] ["tether"])) {
+		if (Input.GetKey (keyControls [currentPlayer] ["tether"]) || Input.GetKey (keyControls [otherPlayer] ["tether"])
+		    || buttonClicked == "Pull") {
 			//clean values
 			speed = 0;
 			speed2 = 0;
@@ -176,7 +185,7 @@ public class PlayerTether : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKey (keyControls[currentPlayer]["tether"])) {
+		if (Input.GetKey (keyControls[currentPlayer]["tether"]) || buttonClicked == "Pull") {
 			//set distance to travel to 
 			endDistanceX = otherPlayerGameObject.transform.position.x + (tetherDistanceX * directionMult);
 			endDistanceY = otherPlayerGameObject.transform.position.y + tetherDistanceY;

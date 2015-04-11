@@ -53,7 +53,7 @@ AnimatorController:
   - serializedVersion: 3
     m_Name: UpperBody
     m_StateMachine: {fileID: 110775416}
-    m_Mask: {fileID: 101100000, guid: bfd4c74056d9741f785caa5960582dc9, type: 2}
+    m_Mask: {fileID: 101100000, guid: 61a000edf30504d7982ab4955cc9e825, type: 2}
     m_BlendingMode: 0
     m_SyncedLayerIndex: -1
     m_StateMachineMotionSetIndex: 0

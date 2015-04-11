@@ -83,14 +83,14 @@ ModelImporter:
       name: idle
       takeName: Take 001
       firstFrame: 2
-      lastFrame: 12
+      lastFrame: 11
       wrapMode: 0
       orientationOffsetY: 0
-      level: .5
+      level: 0
       cycleOffset: 0
       loop: 0
       loopTime: 1
-      loopBlend: 0
+      loopBlend: 1
       loopBlendOrientation: 1
       loopBlendPositionY: 1
       loopBlendPositionXZ: 1
