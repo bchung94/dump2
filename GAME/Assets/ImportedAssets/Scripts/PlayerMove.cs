@@ -171,14 +171,6 @@ public class PlayerMove : MonoBehaviour {
 			if (Input.GetKey (keyControls[currentPlayer]["front"])) {
 				rigidbody.MovePosition(rigidbody.position + side * Time.deltaTime);
 			}
-			/*
-			if (Input.GetKey (keyControls [currentPlayer] ["temp"])) {
-			animatorControl.SetBool ("Tether", true);
-			Debug.Log ("Tether");
-			} else {
-				animatorControl.SetBool ("Tether", false);
-			}
-			*/
 
 			//cast ray to check if REALLY grounded
 			if (Physics.Raycast(transform.position, downray, out hit, 1)) {

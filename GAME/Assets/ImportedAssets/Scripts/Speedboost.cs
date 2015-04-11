@@ -24,7 +24,7 @@ public class Speedboost : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//check for building to position self on by casting rays outward
-		transform.position += new Vector3 (speed, 0, 0);
+		//transform.position += new Vector3 (speed, 0, 0);
 		Vector3 downray = transform.TransformDirection (Vector3.down);
 		Vector3 upray = transform.TransformDirection (Vector3.up);
 
@@ -58,12 +58,5 @@ public class Speedboost : MonoBehaviour {
 			}
 		}
 
-		//reset powerup if it goes offscreen
-		if (transform.position.x <= -15.0f)
-		{
-			transform.position += new Vector3(60.0f,-height,0);
-			checker = false;
-
-		}
 	}
 }
