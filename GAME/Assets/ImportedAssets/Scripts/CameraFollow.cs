@@ -7,9 +7,10 @@ public class CameraFollow: MonoBehaviour {
 	private string player1Label = "Player1";
 
 	private GameObject player1;
-	private float height;
+	public float height;
 
-	private float maxHeight = -2.0f;
+	private float minHeight = -2.0f;
+	private float maxHeight = 80.0f;
 	private float defaultX;
 	private float defaultY;
 	private float defaultZ;
@@ -28,7 +29,7 @@ public class CameraFollow: MonoBehaviour {
 		height = (float)player1.transform.position.y;
 
 		//if player drops and falls, reset camera to default
-		if (height >= maxHeight) {
+		if ((height >= minHeight)&&(height <= maxHeight)) {
 			this.gameObject.transform.position = new Vector3(defaultX, height, defaultZ);
 		}
 		else {
