@@ -1,18 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class ScoreUpdater : MonoBehaviour {
 
+	private Text ScoreText;
 	public float score;
+
 	// Use this for initialization
 	void Start () {
+		ScoreText = GetComponent<Text> ();
 		score = 0;
-	}
-
-	void OnGUI()
-	{
-		//show score
-		GUI.Button (new Rect (10, 10, 110, 40), "Score: " + score);
 	}
 
 	// Update is called once per frame
@@ -26,5 +24,6 @@ public class ScoreUpdater : MonoBehaviour {
 
 			//update leaderboard
 		}
+		ScoreText.text = "Score: " + score;
 	}
 }

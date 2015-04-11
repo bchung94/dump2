@@ -54,10 +54,10 @@ public class PlayerTether : MonoBehaviour {
 		Dictionary<string, KeyCode> player1 = new Dictionary<string, KeyCode>();
 		Dictionary<string, KeyCode> player2 = new Dictionary<string, KeyCode>();
 		
-		player1.Add ("tether", KeyCode.E);
+		player1.Add ("tether", KeyCode.R);
 		keyControls.Add (player1Label, player1);
 		
-		player2.Add ("tether", KeyCode.R);
+		player2.Add ("tether", KeyCode.E);
 		keyControls.Add (player2Label, player2);
 		
 		// check which game object it is connnected to
