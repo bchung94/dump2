@@ -24,9 +24,11 @@ public class GenerateLevelSets : MonoBehaviour {
 	public int random;
 	public int difficulty;
 	public float speed;
+	private GameObject player;
 
 	public float normalSpeed = 4.8f;
 	public float fastSpeed = 3f;
+	private NetworkView nView;
 
 	// Use this for initialization
 	void Start () {
@@ -35,10 +37,28 @@ public class GenerateLevelSets : MonoBehaviour {
 		timer = 1000;
 		timermax = 1000;
 		difficulty = 1;
-		random = Random.Range (1, 4);
+		random = 3;
 		speed = normalSpeed;
+		nView = GetComponent<NetworkView> ();
+		player = GameObject.Find ("Player1(Clone)");
 	}
 
+	//Synchronize random number generator throughout network
+	[RPC]
+	void SyncRandomVariable() {
+		random = Random.Range (1, 4);
+	}
+
+	void OnSerializeNetworkView(BitStream stream, NetworkMessageInfo info) {
+		int temprandom = Random.Range (1,4);
+		if (player.networkView.isMine) {
+			stream.Serialize(ref random);
+		}
+		else {
+			stream.Serialize(ref temprandom);
+			random = temprandom;
+		}
+	}
 	//adds a floor tag to each generated building so player can jump on the set
 	IEnumerator addTag(Transform trans) {
 		trans.gameObject.tag = "Floor";
@@ -63,22 +83,26 @@ public class GenerateLevelSets : MonoBehaviour {
 		//Easy difficulty
 		if (difficulty == 1) {
 			if (timer >= timermax) {
+				GUI.Button (new Rect (100, 100, 250, 100), "random = " + random);
 				if (random == 1) {
 					clone = Instantiate (Easy1, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
+					//nView.RPC ("SyncRandomVariable", RPCMode.All);
 					timermax = 1570;
 				}
 				else if (random == 2) {
 					clone = Instantiate (Easy2, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
+					//nView.RPC ("SyncRandomVariable", RPCMode.All);
 					timermax = 780;
 				}
 				else if (random == 3) {
 					clone = Instantiate (Easy3, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));
 					random = Random.Range (1, 4);
+					//nView.RPC ("SyncRandomVariable", RPCMode.All);
 					timermax = 1170;
 				}
 				else if (random == 10) {

@@ -21,7 +21,7 @@ public class characterSelectButtonHandler : MonoBehaviour {
 		// duration of end animation
 		panelAnimator = GetComponent<Animator> ();
 		panelAnimator.SetBool ("Selected", false);
-		sceneChange = "MonsterRobotRunner";
+		sceneChange = "NetworkConnect";
 		lightIncrement = addOnIntensity / 10;
 	}
 	
