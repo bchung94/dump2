@@ -2,10 +2,10 @@ using UnityEngine;
 using System.Collections;
 
 public class IdleCheck : MonoBehaviour {
-
+	
 	// default labels
 	private string powerupWallLabel = "Cube";
-
+	
 	// Animation
 	private Animator animatorControl;
 	
@@ -17,6 +17,7 @@ public class IdleCheck : MonoBehaviour {
 		// SET Idle Animation
 		animatorControl = GetComponentInChildren<Animator>();
 		animatorControl.SetBool("Stop", false);
+		DontDestroyOnLoad (transform.gameObject);
 	}
 	
 	// Update is called once per frame

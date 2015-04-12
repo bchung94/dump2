@@ -12,69 +12,45 @@ Platform assembly: C:\Users\Brian\Documents\GitHub\OhSnap\GAME\testServer_Data\M
 Loading C:\Users\Brian\Documents\GitHub\OhSnap\GAME\testServer_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
 Platform assembly: C:\Users\Brian\Documents\GitHub\OhSnap\GAME\testServer_Data\Managed\UnityEngine.UI.dll (this message is harmless)
 Loading C:\Users\Brian\Documents\GitHub\OhSnap\GAME\testServer_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
-- Completed reload, in  0.054 seconds
+- Completed reload, in  0.034 seconds
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 Platform assembly: C:\Users\Brian\Documents\GitHub\OhSnap\GAME\testServer_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Users\Brian\Documents\GitHub\OhSnap\GAME\testServer_Data\Managed\System.dll (this message is harmless)
-STopped
+UnloadTime: 5.214078 ms
+Unloading 4 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 19 unused Assets to reduce memory usage. Loaded Objects now: 613.
+Total: 1.368786 ms (FindLiveObjects: 0.044729 ms CreateObjectMapping: 0.016079 ms MarkObjects: 0.278025 ms  DeleteObjects: 0.123372 ms)
+
+Icon Spotlight
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-STopped
+Top Spotlight
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-STopped
+UnloadTime: 0.744910 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
+
+Unloading 52 unused Assets to reduce memory usage. Loaded Objects now: 345.
+Total: 0.789639 ms (FindLiveObjects: 0.010816 ms CreateObjectMapping: 0.008478 ms MarkObjects: 0.135943 ms  DeleteObjects: 0.215462 ms)
+
+Server started!
  
 (Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
 
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+UnloadTime: 0.100861 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Unloading 164 unused Assets to reduce memory usage. Loaded Objects now: 2102.
+Total: 0.684685 ms (FindLiveObjects: 0.061686 ms CreateObjectMapping: 0.013155 ms MarkObjects: 0.175702 ms  DeleteObjects: 0.080396 ms)
 
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+UnloadTime: 2.151994 ms
+Unloading 2 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
-
-STopped
- 
-(Filename: C:/BuildAgent/work/d63dfc6385190b60/artifacts/StandalonePlayerGenerated/UnityEngineDebug.cpp Line: 49)
+Unloading 2 unused Assets to reduce memory usage. Loaded Objects now: 2109.
+Total: 0.716259 ms (FindLiveObjects: 0.066948 ms CreateObjectMapping: 0.013155 ms MarkObjects: 0.223940 ms  DeleteObjects: 0.012571 ms)
 

@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/MonsterRobotRunner.unity
   - enabled: 1
     path: Assets/Credits.unity
+  - enabled: 1
+    path: Assets/NetworkConnect.unity

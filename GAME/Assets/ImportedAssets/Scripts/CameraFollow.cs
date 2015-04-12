@@ -4,9 +4,9 @@ using System.Collections;
 public class CameraFollow: MonoBehaviour {
 
 	// default labels
-	private string player1Label = "Player1";
-
-	private GameObject player1;
+	private string player1Label = "Player1(Clone)";
+	private string player2Label = "Player2(Clone)";
+	private GameObject player;
 	public float height;
 
 	private float minHeight = -2.0f;
@@ -25,9 +25,14 @@ public class CameraFollow: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//find player1 and follow his height
-		player1 = GameObject.Find (player1Label);
-		height = (float)player1.transform.position.y;
-
+		player = GameObject.Find (player1Label);
+		if (player.networkView.isMine) {
+			height = (float)player.transform.position.y;
+		}
+		else {
+			player = GameObject.Find (player2Label);
+			height = (float)player.transform.position.y;
+		}
 		//if player drops and falls, reset camera to default
 		if ((height >= minHeight)&&(height <= maxHeight)) {
 			this.gameObject.transform.position = new Vector3(defaultX, height, defaultZ);
