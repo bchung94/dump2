@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class DeathScenario : MonoBehaviour {
 
 	private string p1name = "Player1(Clone)";
 	private string p2name = "Player2(Clone)";
-	public bool dead;
+	public bool dead = false;
 	private float deathCapX = -20.0f;
 	private float deathCapY = -6.0f;
 	private GameObject player1;
@@ -13,9 +14,23 @@ public class DeathScenario : MonoBehaviour {
 	private DeathScenario p1death;
 	private DeathScenario p2death;
 
+	GameObject replayButton;
+	GameObject homeButton;
+	GameObject jumpButton;
+	GameObject pullButton;
+
 	// Use this for initialization
 	void Start () {
 		dead = false;
+
+		// get buttons to update 
+		//replayButton = GameObject.Find ("ReplayButton");
+		homeButton = GameObject.Find ("HomeButton");
+		jumpButton = GameObject.Find ("Jump Button");
+		pullButton = GameObject.Find ("Pull Button");
+		replayButton.SetActive(false);
+		homeButton.SetActive(false);
+
 		//get both players death scripts
 		player1 = GameObject.Find (p1name);
 		p1death = player1.GetComponent<DeathScenario> ();
@@ -24,18 +39,6 @@ public class DeathScenario : MonoBehaviour {
 			p2death = player2.GetComponent<DeathScenario> ();
 		}
 
-	}
-
-	void OnGUI() {
-		//retry button!
-		if (p1death.dead && p2death.dead) {
-			if (GUI.Button(new Rect(350, 250, 250, 100), "Retry?")) {
-				player1.transform.position = new Vector3(-1f,0.5f,0);
-				player2.transform.position = new Vector3(0,0.5f,0);
-				dead = false;
-				Application.LoadLevel(2);
-			}
-		}
 	}
 
 
@@ -49,6 +52,13 @@ public class DeathScenario : MonoBehaviour {
 		if (dead == true) {
 			player2 = GameObject.Find (p2name);
 			p2death = player2.GetComponent<DeathScenario> ();
+		}
+
+		if (dead == true) {
+			pullButton.GetComponent<Button> ().interactable = false;
+			jumpButton.GetComponent<Button> ().interactable = false;
+			replayButton.SetActive (true);
+			homeButton.SetActive (true);
 		}
 	}
 }
