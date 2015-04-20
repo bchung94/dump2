@@ -4434,8 +4434,8 @@ GameObject:
   - 20: {fileID: 351487482}
   - 92: {fileID: 351487481}
   - 124: {fileID: 351487480}
-  - 114: {fileID: 351487484}
   - 114: {fileID: 351487479}
+  - 114: {fileID: 351487484}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -4538,10 +4538,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 351487478}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3cfef8652eec4881ab28f29e45e7e49, type: 3}
+  m_Script: {fileID: 11500000, guid: dd0639079b9c89d44a8e66d80b19f0e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  height: 0
 --- !u!1 &363244287
 GameObject:
   m_ObjectHideFlags: 0
@@ -18624,7 +18623,6 @@ GameObject:
   - 224: {fileID: 1468564173}
   - 222: {fileID: 1468564175}
   - 114: {fileID: 1468564174}
-  - 114: {fileID: 1468564176}
   m_Layer: 5
   m_Name: ScoreText
   m_TagString: Untagged
@@ -18646,8 +18644,8 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -130, y: 0}
-  m_SizeDelta: {x: 160, y: 40}
+  m_AnchoredPosition: {x: -5.80000019, y: 0}
+  m_SizeDelta: {x: 400, y: 40}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1468564174
 MonoBehaviour:
@@ -18681,20 +18679,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1468564172}
---- !u!114 &1468564176
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1468564172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddb239073de1a244199c24213d5ab33e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playername: Player1(Clone)
-  score: 0
-  Highscore: 0
 --- !u!1 &1469961401
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,6 @@ using UnityEngine.UI;
 public class DeathScenario : MonoBehaviour {
 
 	private string p1name = "Player1(Clone)";
-	private string p2name = "Player2(Clone)";
 	public bool dead = false;
 	private float deathCapX = -20.0f;
 	private float deathCapY = -6.0f;
@@ -24,7 +23,7 @@ public class DeathScenario : MonoBehaviour {
 		dead = false;
 
 		// get buttons to update 
-		//replayButton = GameObject.Find ("ReplayButton");
+		replayButton = GameObject.Find ("ReplayButton");
 		homeButton = GameObject.Find ("HomeButton");
 		jumpButton = GameObject.Find ("Jump Button");
 		pullButton = GameObject.Find ("Pull Button");
@@ -34,10 +33,6 @@ public class DeathScenario : MonoBehaviour {
 		//get both players death scripts
 		player1 = GameObject.Find (p1name);
 		p1death = player1.GetComponent<DeathScenario> ();
-		player2 = GameObject.Find (p2name);
-		if (player2 != null) {
-			p2death = player2.GetComponent<DeathScenario> ();
-		}
 
 	}
 
@@ -48,10 +43,6 @@ public class DeathScenario : MonoBehaviour {
 		if ((transform.position.x < deathCapX)||(transform.position.y < deathCapY)) {
 			transform.position = new Vector3(0,100.0f,0);
 			dead = true;
-		}
-		if (dead == true) {
-			player2 = GameObject.Find (p2name);
-			p2death = player2.GetComponent<DeathScenario> ();
 		}
 
 		if (dead == true) {

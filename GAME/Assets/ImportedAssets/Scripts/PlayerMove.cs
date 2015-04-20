@@ -177,7 +177,7 @@ public class PlayerMove : MonoBehaviour {
 		//animatorControl.SetBool("Tether", false);
 		
 		//temporary forward and backwards movement
-		if(networkView.isMine) {
+		if(PhotonView.Get (this).isMine) {
 			if (Input.GetKey (keyControls[currentPlayer]["back"])) {
 				rigidbody.MovePosition(rigidbody.position + (-side) * Time.deltaTime);
 			}
@@ -198,7 +198,7 @@ public class PlayerMove : MonoBehaviour {
 		else { isgrounded = false;}
 		
 		// jump function
-		if(networkView.isMine) {
+		if(PhotonView.Get (this).isMine) {
 			if ((Input.GetKey (keyControls[currentPlayer]["jump"]))&&(isgrounded == true)) {
 				// START jump animation
 				animatorControl.SetBool("Jump", isgrounded);

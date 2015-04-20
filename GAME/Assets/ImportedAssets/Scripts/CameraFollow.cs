@@ -26,11 +26,7 @@ public class CameraFollow: MonoBehaviour {
 	void Update () {
 		//find player1 and follow his height
 		player = GameObject.Find (player1Label);
-		if (player.networkView.isMine) {
-			height = (float)player.transform.position.y;
-		}
-		else {
-			player = GameObject.Find (player2Label);
+		if (player.GetComponent<PhotonView>().isMine) {
 			height = (float)player.transform.position.y;
 		}
 		//if player drops and falls, reset camera to default
