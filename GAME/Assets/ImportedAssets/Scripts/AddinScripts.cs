@@ -3,19 +3,24 @@ using System.Collections;
 
 public class AddinScripts : MonoBehaviour {
 
-	private GameObject player;
+	private GameObject[] players;
 	private GameObject scoreText;
 	private bool starting;
 
 	// Use this for initialization
 	void Start () {
-		player = GameObject.FindGameObjectWithTag ("Player");
+		players = GameObject.FindGameObjectsWithTag ("Player");
 		scoreText = GameObject.Find ("ScoreText");
 		starting = false;
 	}
 
 	IEnumerator Addscripts() {
-		player.AddComponent<DeathScenario> ();
+		foreach (GameObject player in players) {
+			if (PhotonView.Get (player).isMine) {
+				player.AddComponent<DeathScenario> ();
+			}
+			player.AddComponent<PlayerTether> ();
+		}
 		this.gameObject.AddComponent<CameraFollow> ();
 		scoreText.AddComponent<ScoreUpdater> ();
 		yield return new WaitForSeconds (1.0f);

@@ -27,8 +27,13 @@ public class DeathScenario : MonoBehaviour {
 		homeButton = GameObject.Find ("HomeButton");
 		jumpButton = GameObject.Find ("Jump Button");
 		pullButton = GameObject.Find ("Pull Button");
-		replayButton.SetActive(false);
-		homeButton.SetActive(false);
+		Debug.Log (replayButton);
+		if (replayButton != null) {
+			replayButton.SetActive(false);
+		}
+		if (homeButton != null) {
+			homeButton.SetActive(false);
+		}
 
 		//get both players death scripts
 		player1 = GameObject.Find (p1name);
