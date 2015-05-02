@@ -13,8 +13,7 @@ GameObject:
   - 114: {fileID: 11414818}
   - 114: {fileID: 11414820}
   - 82: {fileID: 8214822}
-  - 148: {fileID: 14814822}
-  - 114: {fileID: 11472534}
+  - 114: {fileID: 11491660}
   m_Layer: 9
   m_Name: H_Monster_Prefab
   m_TagString: Player
@@ -990,7 +989,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isgrounded: 0
   collide: 
---- !u!114 &11472534
+--- !u!114 &11491660
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -1081,18 +1080,6 @@ SkinnedMeshRenderer:
     m_Center: {x: -3.45259905e-05, y: -.118337452, z: .176313102}
     m_Extent: {x: .363964558, y: .710857809, z: 1.47289801}
   m_DirtyAABB: 0
---- !u!148 &14814822
-NetworkView:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 114764}
-  m_Enabled: 1
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 414764}
-  m_ViewID:
-    m_ID: 0
-    m_Type: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

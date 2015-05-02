@@ -1561,7 +1561,7 @@ SkinnedMeshRenderer:
   m_DirtyAABB: 0
 --- !u!148 &14841560
 NetworkView:
-  m_ObjectHideFlags: 1
+  m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141484}

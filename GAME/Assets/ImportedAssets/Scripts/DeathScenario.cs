@@ -3,15 +3,10 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class DeathScenario : MonoBehaviour {
-
-	private string p1name = "Player1(Clone)";
+	
 	public bool dead = false;
 	private float deathCapX = -20.0f;
 	private float deathCapY = -6.0f;
-	private GameObject player1;
-	private GameObject player2;
-	private DeathScenario p1death;
-	private DeathScenario p2death;
 
 	GameObject replayButton;
 	GameObject homeButton;
@@ -29,13 +24,8 @@ public class DeathScenario : MonoBehaviour {
 		pullButton = GameObject.Find ("Pull Button");
 		replayButton.SetActive(false);
 		homeButton.SetActive(false);
-
-		//get both players death scripts
-		player1 = GameObject.Find (p1name);
-		p1death = player1.GetComponent<DeathScenario> ();
 	}
-
-
+	
 	// Update is called once per frame
 	void Update () {
 		//Move player offscreen
