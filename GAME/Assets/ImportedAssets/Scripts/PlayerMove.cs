@@ -175,9 +175,10 @@ public class PlayerMove : MonoBehaviour {
 		//if (networkView.isMine) {
 		Vector3 downray = transform.TransformDirection (Vector3.down);
 		//animatorControl.SetBool("Tether", false);
-		
+
 		//temporary forward and backwards movement
 		if(PhotonView.Get (this).isMine) {
+
 			if (Input.GetKey (keyControls[currentPlayer]["back"])) {
 				rigidbody.MovePosition(rigidbody.position + (-side) * Time.deltaTime);
 			}

@@ -6,7 +6,7 @@ public class PlayerTether : MonoBehaviour {
 	
 	// default labels
 	private string player1Label = "Player1(Clone)";
-	private string player2Label = "Player1(Clone)";
+	private string player2Label = "Player2(Clone)";
 	private string backgroundLabel = "Background";
 	private string groundTag = "Floor";
 	//private string pullButtonLabel = "Pull Button";
