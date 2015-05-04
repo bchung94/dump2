@@ -1898,6 +1898,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterSelectedString: 
+  allyCharacterString: 
+  characterModelString: 
 --- !u!4 &452796217
 Transform:
   m_ObjectHideFlags: 0
@@ -3362,7 +3364,7 @@ Transform:
   - {fileID: 2086363734}
   - {fileID: 2139933871}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
 --- !u!1001 &903235943
 Prefab:
   m_ObjectHideFlags: 0
@@ -4673,7 +4675,7 @@ Transform:
   - {fileID: 1833248145}
   - {fileID: 99291080}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!95 &1176094941
 Animator:
   serializedVersion: 3
@@ -6835,7 +6837,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: dc09ffc4ea2b4459ba3d7b5df3aed4c7, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 13700000, guid: dc09ffc4ea2b4459ba3d7b5df3aed4c7, type: 3}
       propertyPath: m_Materials.Array.data[0]

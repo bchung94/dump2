@@ -5,6 +5,7 @@ public class PersistantGameManager : MonoBehaviour {
 	
 	public string characterSelectedString;
 	public string allyCharacterString;
+	public string characterModelString;
 	private GameObject[] players;
 
 	// Use this for initialization
@@ -13,7 +14,7 @@ public class PersistantGameManager : MonoBehaviour {
 
 	public void characterButton (string character) {
 		Debug.Log (character);
-		characterSelectedString = character;
+		characterModelString = character;
 	}
 
 	// Make this game object and all its transform children
@@ -28,8 +29,11 @@ public class PersistantGameManager : MonoBehaviour {
 		players = GameObject.FindGameObjectsWithTag ("Player");
 		if (players.Length == 2) {
 			foreach (GameObject player in players){
-				if (player.name != characterSelectedString+"_Prefab(Clone)")
+				if (PhotonView.Get (player).isMine)
 				{
+					characterSelectedString = player.name;
+				}
+				else {
 					allyCharacterString = player.name;
 				}
 			}

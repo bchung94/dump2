@@ -9,6 +9,8 @@ TagManager:
   - Selection_H_Robot
   - Selection_H_Monster
   - SelectionChar4
+  - Pointer
+  - SelectionChar3
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
