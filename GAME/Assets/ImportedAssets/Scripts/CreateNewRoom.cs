@@ -31,7 +31,7 @@ public class CreateNewRoom : MonoBehaviour {
 	}
 
 	IEnumerator P2waitfunction () {
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (0.7f);
 		otherplayer = GameObject.Find ("H_Monster_Prefab(Clone)");
 		if (otherplayer == null) {
 			otherplayer = GameObject.Find ("H_Robot_Prefab(Clone)");
@@ -40,7 +40,7 @@ public class CreateNewRoom : MonoBehaviour {
 	}
 
 	IEnumerator Countdown () {
-		yield return new WaitForSeconds (0.5f);
+		yield return new WaitForSeconds (0.7f);
 		Application.LoadLevel ("MonsterRobotRunner");
 	}
 	// Update is called once per frame
