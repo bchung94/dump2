@@ -179,7 +179,7 @@ public class PlayerMove : MonoBehaviour {
 
 		//temporary forward and backwards movement
 		if(PhotonView.Get (this).isMine) {
-			transform.position = Vector3.Lerp(transform.position,this.syncposition,Time.deltaTime * 5);
+			//transform.position = Vector3.Lerp(transform.position,this.syncposition,Time.deltaTime * 5);
 			if (Input.GetKey (keyControls[currentPlayer]["back"])) {
 				rigidbody.MovePosition(rigidbody.position + (-side) * Time.deltaTime);
 			}

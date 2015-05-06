@@ -218,6 +218,10 @@ public class PlayerTether : MonoBehaviour {
 				StartCoroutine(normalYTether());
 				StartCoroutine(player1XTether());
 			} 
+			else {
+				StartCoroutine(normalYTether());
+				StartCoroutine(normalXTether());
+			}
 		}
 		else {
 			//cloth.SetActive(false);

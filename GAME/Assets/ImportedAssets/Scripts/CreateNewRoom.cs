@@ -30,6 +30,9 @@ public class CreateNewRoom : MonoBehaviour {
 		otherplayer = GameObject.Find ("H_Monster_Prefab(Clone)");
 		if (otherplayer == null) {
 			otherplayer = GameObject.Find ("H_Robot_Prefab(Clone)");
+			if (otherplayer == null) {
+				otherplayer = GameObject.Find ("J_Robot_Prefab(Clone)");
+			}
 		}
 		otherplayer.name = "Player2(Clone)";
 	}
