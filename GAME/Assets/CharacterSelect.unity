@@ -3613,31 +3613,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 913353387}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 452796216}
-        m_MethodName: characterButton
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: J_Robot
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2084806092}
-        m_MethodName: characterButton
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine, Version=0.0.0.0,
-            Culture=neutral, PublicKeyToken=null
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: J_Robot
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &913353387
@@ -3847,7 +3823,7 @@ Prefab:
     - target: {fileID: 9500000, guid: 40df876432beb4969a694c3e894375a1, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 976e6076f37e6450781b140c8f7527d2, type: 2}
+      objectReference: {fileID: 9100000, guid: 2f0f7238d88cc428db7eff7eef5a8869, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 40df876432beb4969a694c3e894375a1, type: 3}
   m_RootGameObject: {fileID: 2084806089}
@@ -7773,7 +7749,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 2084806090}
   - 95: {fileID: 2084806091}
-  - 114: {fileID: 2084806092}
   m_Layer: 0
   m_Name: J_Robot_Rig_FBX
   m_TagString: Untagged
@@ -7805,24 +7780,12 @@ Animator:
   m_GameObject: {fileID: 2084806089}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 40df876432beb4969a694c3e894375a1, type: 3}
-  m_Controller: {fileID: 9100000, guid: 976e6076f37e6450781b140c8f7527d2, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2f0f7238d88cc428db7eff7eef5a8869, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &2084806092
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2084806089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fd440338f4f1546beb5388c25f204be6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneChange: NetworkConnect
 --- !u!1 &2086363733
 GameObject:
   m_ObjectHideFlags: 0
