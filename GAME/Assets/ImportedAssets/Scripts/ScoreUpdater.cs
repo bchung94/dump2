@@ -20,7 +20,7 @@ public class ScoreUpdater : MonoBehaviour {
 			playername = characterString;
 		}
 		else {
-			playername = gameManager.allyCharacterString;
+			playername = gameManager.otherPlayer;
 		}
 		ScoreText = GetComponent<Text> ();
 		Highscore = PlayerPrefs.GetInt ("High Score");
