@@ -20,7 +20,7 @@ public class NetworkControl : MonoBehaviour {
 	void Start () {
 		PhotonNetwork.ConnectUsingSettings ("0.10");
 		gameManager = GameObject.Find ("GameController").GetComponent<PersistantGameManager>();
-		characterString = gameManager.characterSelectedString;
+		characterString = gameManager.characterModelString;
 		playernum = 1;
 	}
 
@@ -66,7 +66,7 @@ public class NetworkControl : MonoBehaviour {
 				
 				GameObject text = (GameObject)Instantiate(Resources.Load("RoomButton"));
 				serverList.Add(text);
-				//text.transform.SetParent(panel, false);
+				text.transform.SetParent(panel, false);
 				text.transform.FindChild("Text").GetComponent<Text>().text = hostData[i].name;
 				text.GetComponent<RectTransform>().anchoredPosition = new Vector3(0,230 + (i * -70), 0);
 			}
@@ -101,7 +101,7 @@ public class NetworkControl : MonoBehaviour {
 		netview = this.GetComponent<PhotonView>();
 		netview.RPC("playernumber",PhotonTargets.All,(PhotonNetwork.playerList.Length));
 		gameManager = GameObject.Find ("GameController").GetComponent<PersistantGameManager>();
-		characterString = gameManager.characterSelectedString;
+		characterString = gameManager.characterModelString;
 		GameObject monster = PhotonNetwork.Instantiate(characterString + "_Prefab", new Vector3(-1f,0.5f,0), Quaternion.identity,0);
 		monster.name = "Player" + playernum + "(Clone)";
 	}
