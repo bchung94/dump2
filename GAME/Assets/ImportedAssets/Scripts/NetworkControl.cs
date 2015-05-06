@@ -101,7 +101,7 @@ public class NetworkControl : MonoBehaviour {
 		characterString = gameManager.characterSelectedString;
 		gameManager.thisPlayerNum = playernum;
 		gameManager.setOtherPlayer ();
-		GameObject monster = PhotonNetwork.Instantiate(characterString + "_Prefab", new Vector3(-1f,0.5f,0), Quaternion.identity,0);
+		GameObject monster = PhotonNetwork.Instantiate(characterString + "_Prefab", new Vector3(-1f,30.5f,0), Quaternion.identity,0);
 		monster.name = "Player" + playernum + "(Clone)";
 	}
 

@@ -37,7 +37,7 @@ public class GenerateLevelSets : MonoBehaviour {
 		timer = 1000;
 		timermax = 1000;
 		difficulty = 1;
-		random = 3;
+		random = 1;
 		speed = normalSpeed;
 		nView = GetComponent<NetworkView> ();
 		player = GameObject.Find ("Player1(Clone)");
@@ -85,7 +85,7 @@ public class GenerateLevelSets : MonoBehaviour {
 		//Easy difficulty
 		if (difficulty == 1) {
 			if (timer >= timermax) {
-				GUI.Button (new Rect (100, 100, 250, 100), "random = " + random);
+				Debug.Log ("random = " + random);
 				if (random == 1) {
 					clone = Instantiate (Easy1, spawnlocation, Quaternion.identity) as GameObject;
 					StartCoroutine(addTag(clone.transform));

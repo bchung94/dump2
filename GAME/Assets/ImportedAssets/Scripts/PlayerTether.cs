@@ -29,6 +29,11 @@ public class PlayerTether : MonoBehaviour {
 	public bool isFrontOtherPlayer;
 	private string buttonClicked = "";
 	private GameObject cloth;
+	private Vector3 syncposition1;
+	private Vector3 syncposition2;
+	private GameObject gamecontroller;
+	public PhotonView netview;
+	private bool truth;
 
 	// values
 	private float speedIncrease;
@@ -85,6 +90,28 @@ public class PlayerTether : MonoBehaviour {
 		}
 		else {
 			cloth = GameObject.Find ("Player2_Cloth");
+		}
+		gamecontroller = GameObject.Find ("GameController");
+		this.GetComponent<PhotonView> ().ObservedComponents.Add (this.GetComponent<PlayerTether> ());
+	}
+
+	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+		if (truth) {
+		syncposition1 = transform.position;
+		syncposition2 = otherPlayerGameObject.transform.position;
+			if (stream.isWriting) {
+				syncposition1 = transform.position;
+				syncposition2 = otherPlayerGameObject.transform.position;
+				stream.SendNext(syncposition1);
+				stream.SendNext(syncposition2);
+			}
+			else {
+				Debug.Log("HI");
+				syncposition1 = (Vector3) stream.ReceiveNext();
+				syncposition2 = (Vector3) stream.ReceiveNext();
+				transform.position = syncposition1;
+				otherPlayerGameObject.transform.position = syncposition2;
+			}
 		}
 	}
 
@@ -174,9 +201,8 @@ public class PlayerTether : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
-
 		// find direction of characters
-
+		gamecontroller = GameObject.Find ("GameController");
 		if (Input.GetKey (keyControls [currentPlayer] ["tether"])|| buttonClicked == "Pull") {
 			//clean values
 			speed = 0;
@@ -214,17 +240,24 @@ public class PlayerTether : MonoBehaviour {
 		
 		if (checkPulledCurrentPlayer == true) {
 			//cloth.SetActive(true);
+			GameObject currentp1 = GameObject.Find(currentPlayer);
+			truth = gamecontroller.GetComponent<PersistantGameManager>().tethered = true;
 			if (currentPlayer == player1Label) {
-				StartCoroutine(normalYTether());
-				StartCoroutine(player1XTether());
+				if (!PhotonView.Get (currentp1).isMine) {
+					StartCoroutine(normalYTether());
+					StartCoroutine(normalXTether());
+				}
 			} 
 			else {
-				StartCoroutine(normalYTether());
-				StartCoroutine(normalXTether());
+				if (PhotonView.Get (otherPlayerGameObject).isMine) {
+					StartCoroutine(normalYTether());
+					StartCoroutine(player1XTether());
+				}
 			}
 		}
 		else {
 			//cloth.SetActive(false);
+			truth = gamecontroller.GetComponent<PersistantGameManager>().tethered = false;
 		}
 	}
 

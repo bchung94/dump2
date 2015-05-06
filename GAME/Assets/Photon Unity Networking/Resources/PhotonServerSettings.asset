@@ -35,4 +35,5 @@ MonoBehaviour:
   - SyncRandomVariable
   - TaggedPlayer
   - playernumber
+  - tethercheck
   DisableAutoOpenWizard: 0

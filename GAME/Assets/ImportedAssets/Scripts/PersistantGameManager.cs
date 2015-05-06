@@ -9,11 +9,12 @@ public class PersistantGameManager : MonoBehaviour {
 	public int thisPlayerNum;
 	public string thisPlayer;
 	public string otherPlayer;
-	
+	public bool tethered;
 	// Use this for initialization
 	void Start () {
 		player [1] = "Player1(Clone)";
 		player [2] = "Player2(Clone)";
+		tethered = false;
 	}
 	
 	public void characterButton (string character) {

@@ -19,7 +19,9 @@ public class PlayerMove : MonoBehaviour {
 	public bool isgrounded;
 	private RaycastHit hit;
 	public string collide;
-	
+	private GameObject gamecontroller;
+	private bool tethering = false;
+
 	// set values
 	//private Vector3 forward = new Vector3(0, 0, 5);
 	private Vector3 side = new Vector3(6, 0, 0);	// movement speed
@@ -67,18 +69,21 @@ public class PlayerMove : MonoBehaviour {
 			currentPlayer = player2Label;
 			otherPlayer = player1Label;
 		}
+		gamecontroller = GameObject.Find ("GameController");
 	}
 	
 	//Synchronize random number generator throughout network
 	void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
-		syncposition = Vector3.zero;
-		if (stream.isWriting) {
+		if (tethering == false) {
 			syncposition = transform.position;
-			stream.SendNext(syncposition);
-		}
-		else {
-			syncposition = (Vector3) stream.ReceiveNext();
-			transform.position = syncposition;
+			if (stream.isWriting) {
+				syncposition = transform.position;
+				stream.SendNext(syncposition);
+			}
+			else {
+				syncposition = (Vector3) stream.ReceiveNext();
+				transform.position = syncposition;
+			}
 		}
 	}
 	//Speed boost
@@ -173,6 +178,7 @@ public class PlayerMove : MonoBehaviour {
 
 	// Update is called once per frame
 	void FixedUpdate () {
+		tethering = gamecontroller.GetComponent<PersistantGameManager> ().tethered;
 		//if (networkView.isMine) {
 		Vector3 downray = transform.TransformDirection (Vector3.down);
 		//animatorControl.SetBool("Tether", false);

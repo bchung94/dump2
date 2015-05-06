@@ -3761,8 +3761,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &190954751
 GameObject:
@@ -4655,6 +4655,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 240141238}
+  - 114: {fileID: 240141239}
   m_Layer: 0
   m_Name: M Set 3
   m_TagString: Floor
@@ -4689,6 +4690,22 @@ Transform:
   - {fileID: 799185926}
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &240141239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 240141237}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1eb3481e111a42ebbed70ead6d568ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxY: 50
+  maxX: -195
+  normalSpeed: -6
+  fastSpeed: -18
+  speed: 0
 --- !u!1 &251825217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,7 +6009,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 427422, guid: 5bed4114f3e454b71a8956645a0464d1, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 100
+      value: 123.900002
       objectReference: {fileID: 0}
     - target: {fileID: 427422, guid: 5bed4114f3e454b71a8956645a0464d1, type: 2}
       propertyPath: m_LocalPosition.z
@@ -8861,8 +8878,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &496727472
 GameObject:
@@ -9642,6 +9659,7 @@ GameObject:
   - 4: {fileID: 581600414}
   - 33: {fileID: 581600416}
   - 23: {fileID: 581600415}
+  - 65: {fileID: 581600417}
   m_Layer: 0
   m_Name: Energy Powerup
   m_TagString: Powerup
@@ -9690,6 +9708,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 368012090}
   m_GameObject: {fileID: 581600413}
   m_Mesh: {fileID: 4300000, guid: dbdd8972278154a31b4e128bf7ecb078, type: 3}
+--- !u!65 &581600417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 581600413}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.19063962, y: .926918924, z: 1.19063973}
+  m_Center: {x: -.00112265337, y: .464398712, z: 0}
 --- !u!1 &586637581
 GameObject:
   m_ObjectHideFlags: 0
@@ -12072,8 +12102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &714442121
 GameObject:
@@ -18209,8 +18239,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &1070337097
 GameObject:
@@ -18759,6 +18789,76 @@ Transform:
   - {fileID: 1170931384}
   m_Father: {fileID: 932668993}
   m_RootOrder: 0
+--- !u!1 &1118613361
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1118613365}
+  - 33: {fileID: 1118613364}
+  - 64: {fileID: 1118613363}
+  - 23: {fileID: 1118613362}
+  m_Layer: 8
+  m_Name: Plane
+  m_TagString: Floor
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!23 &1118613362
+Renderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118613361}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+--- !u!64 &1118613363
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118613361}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_SmoothSphereCollisions: 0
+  m_Convex: 0
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &1118613364
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118613361}
+  m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1118613365
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1118613361}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1, y: 20.2600002, z: 0}
+  m_LocalScale: {x: 5, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
 --- !u!1 &1124689535
 GameObject:
   m_ObjectHideFlags: 0
@@ -19719,8 +19819,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &1194000109
 GameObject:
@@ -22966,8 +23066,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &1342877486
 GameObject:
@@ -25459,6 +25559,7 @@ GameObject:
   - 4: {fileID: 1498379354}
   - 33: {fileID: 1498379356}
   - 23: {fileID: 1498379355}
+  - 65: {fileID: 1498379357}
   m_Layer: 0
   m_Name: Energy Powerup
   m_TagString: Powerup
@@ -25507,6 +25608,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 368012090}
   m_GameObject: {fileID: 1498379353}
   m_Mesh: {fileID: 4300000, guid: dbdd8972278154a31b4e128bf7ecb078, type: 3}
+--- !u!65 &1498379357
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1498379353}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.19063973, y: .926918983, z: 1.19063973}
+  m_Center: {x: -.0011073947, y: .464406371, z: 0}
 --- !u!1 &1501974478
 GameObject:
   m_ObjectHideFlags: 0
@@ -27079,8 +27192,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &1569247624
 GameObject:
@@ -34980,6 +35093,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 2018939232}
+  - 114: {fileID: 2018939233}
   m_Layer: 0
   m_Name: E Set 1
   m_TagString: Untagged
@@ -34994,7 +35108,7 @@ Transform:
   m_PrefabInternal: {fileID: 368012090}
   m_GameObject: {fileID: 2018939231}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 100, z: 0}
+  m_LocalPosition: {x: 0, y: 123.900002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 399914514}
@@ -35021,6 +35135,22 @@ Transform:
   - {fileID: 581600414}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!114 &2018939233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2018939231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1eb3481e111a42ebbed70ead6d568ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxY: 50
+  maxX: -195
+  normalSpeed: -6
+  fastSpeed: -18
+  speed: 0
 --- !u!1 &2023219384
 GameObject:
   m_ObjectHideFlags: 0
@@ -35217,8 +35347,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &2040871636
 GameObject:
@@ -36819,8 +36949,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &2109644483
 GameObject:
@@ -37350,8 +37480,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
 --- !u!1 &2139701299
 GameObject:
@@ -37535,6 +37665,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxY: 50
   maxX: -195
-  normalSpeed: -.100000001
-  fastSpeed: -.300000012
+  normalSpeed: -6
+  fastSpeed: -18
   speed: 0
