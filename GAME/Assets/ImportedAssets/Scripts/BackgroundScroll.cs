@@ -12,7 +12,7 @@ public class BackgroundScroll : MonoBehaviour {
 	void Start () {
 		speed = normalSpeed;
 		gameManager = GameObject.Find ("GameController").GetComponent<PersistantGameManager>();
-		characterString = gameManager.characterSelectedString;
+		characterString = gameManager.thisPlayer;
 	}
 	
 	// Update is called once per frame

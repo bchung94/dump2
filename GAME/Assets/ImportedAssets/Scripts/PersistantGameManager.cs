@@ -24,10 +24,16 @@ public class PersistantGameManager : MonoBehaviour {
 	public void setOtherPlayer()
 	{
 		int otherPlayerNum = 1;
-		if (thisPlayerNum == 1)
+		if (thisPlayerNum == 1) {
 			otherPlayerNum = 2;
-		else if (thisPlayerNum == 2)
+			thisPlayer = player [1];
+			otherPlayer = player[2];
+		}
+		else if (thisPlayerNum == 2) {
 			otherPlayerNum = 1;
+			thisPlayer = player [2];
+			otherPlayer = player[1];
+		}
 		
 		GameObject[] players = GameObject.FindGameObjectsWithTag("Player");
 		foreach (GameObject one in players) {

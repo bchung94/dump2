@@ -14,7 +14,7 @@ public class ScoreUpdater : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.Find ("GameController").GetComponent<PersistantGameManager>();
-		characterString = gameManager.characterSelectedString;
+		characterString = gameManager.thisPlayer;
 		player = GameObject.Find (characterString);
 		if(PhotonView.Get(player).isMine) {
 			playername = gameManager.thisPlayer;

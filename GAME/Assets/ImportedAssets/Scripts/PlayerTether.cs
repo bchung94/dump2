@@ -177,8 +177,7 @@ public class PlayerTether : MonoBehaviour {
 
 		// find direction of characters
 
-		if (Input.GetKey (keyControls [currentPlayer] ["tether"])|| Input.GetKey (keyControls [otherPlayer] ["tether"])
-		    || buttonClicked == "Pull") {
+		if (Input.GetKey (keyControls [currentPlayer] ["tether"])|| buttonClicked == "Pull") {
 			//clean values
 			speed = 0;
 			speed2 = 0;
@@ -214,18 +213,14 @@ public class PlayerTether : MonoBehaviour {
 		animatorControlOtherPlayer.SetBool("IsFront", isFrontOtherPlayer);
 		
 		if (checkPulledCurrentPlayer == true) {
-			cloth.SetActive(true);
+			//cloth.SetActive(true);
 			if (currentPlayer == player1Label) {
 				StartCoroutine(normalYTether());
 				StartCoroutine(player1XTether());
-			} else {
-				StartCoroutine(normalXTether());
-			}
-
+			} 
 		}
 		else {
-			Debug.Log(cloth);
-			cloth.SetActive(false);
+			//cloth.SetActive(false);
 		}
 	}
 

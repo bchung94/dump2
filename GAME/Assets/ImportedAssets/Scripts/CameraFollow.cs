@@ -18,7 +18,7 @@ public class CameraFollow: MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		gameManager = GameObject.Find ("GameController").GetComponent<PersistantGameManager>();
-		characterString = gameManager.characterSelectedString;
+		characterString = gameManager.thisPlayer;
 
 		defaultX = Camera.main.gameObject.transform.position.x;
 		defaultY = Camera.main.gameObject.transform.position.y;
