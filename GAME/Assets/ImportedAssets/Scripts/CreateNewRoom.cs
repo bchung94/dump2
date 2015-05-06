@@ -26,8 +26,9 @@ public class CreateNewRoom : MonoBehaviour {
 	// called when button is pressed
 	public void LoadLevel() {
 		// make button not work after you create room
-		createRoomButton.interactable = false;
 		PhotonNetwork.CreateRoom (inputTextRoomName.text, true, true, 2);
+		createRoomButton.interactable = false;
+		inputTextRoomName.interactable = false;
 	}
 
 	IEnumerator P2waitfunction () {

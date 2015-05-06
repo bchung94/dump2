@@ -17,10 +17,10 @@ public class ScoreUpdater : MonoBehaviour {
 		characterString = gameManager.characterSelectedString;
 		player = GameObject.Find (characterString);
 		if(PhotonView.Get(player).isMine) {
-			playername = characterString;
+			playername = gameManager.thisPlayer;
 		}
 		else {
-			playername = gameManager.allyCharacterString;
+			playername = gameManager.otherPlayer;
 		}
 		ScoreText = GetComponent<Text> ();
 		Highscore = PlayerPrefs.GetInt ("High Score");
